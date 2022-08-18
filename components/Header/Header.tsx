@@ -5,7 +5,6 @@ import { SunIcon } from "./Sun";
 import { MoonIcon } from "./Moon";
 import Link from "next/link";
 
-
 const ThemeSwitch = () => {
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
@@ -20,16 +19,16 @@ const ThemeSwitch = () => {
 
 	if (theme == "dark") {
 		return (
-			<span className={styles.themeButton} onClick={() => setTheme('light')}>
+			<span className={styles.themeButton} onClick={() => setTheme("light")}>
 				<SunIcon />
 			</span>
-		)
+		);
 	} else {
 		return (
-			<span className={styles.themeButton} onClick={() => setTheme('dark')}>
+			<span className={styles.themeButton} onClick={() => setTheme("dark")}>
 				<MoonIcon />
 			</span>
-		)
+		);
 	}
 };
 
@@ -48,6 +47,9 @@ export function Header() {
 					</Link>
 					<Link href="/projects">
 						<a className={styles.navLink}>Projects</a>
+					</Link>
+					<Link href="/snippets">
+						<a className={styles.navLink}>Snippets</a>
 					</Link>
 					<Link href="/about">
 						<a className={styles.navLink}>About</a>

@@ -4,10 +4,13 @@
 
 .headerDiv {
   display: flex;
+  padding-bottom: 3rem;
 }
 
 .themeButton {
   color: var(--extra-muted-light);
+  cursor: pointer;
+
 }
 [data-theme='dark'].themeButton {
   color: var(--extra-muted-dark);

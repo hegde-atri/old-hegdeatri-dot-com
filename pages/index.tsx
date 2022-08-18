@@ -1,25 +1,34 @@
-import type {GetStaticProps, NextPage} from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 import Layout from "@/components/Layout";
+import { getAllPosts, PostMeta } from "@/lib/posts";
+import Post from "@/components/Post";
+import { MDXProvider } from "@mdx-js/react";
 
-const Home: NextPage = ({characters}: any) => {
-  return (
-    <Layout>
-        <h2>Child</h2>
-    </Layout>
-  )
+export default function Home({ posts }: { posts: PostMeta[] }) {
+	return (
+		<Layout>
+			<div>
+				<h4>Latest Projects</h4>
+				<div>
+					<Post posts={posts} />
+				</div>
+				<h4>Latest Posts</h4>
+				<div>
+				</div>
+			</div>
+		</Layout>
+	);
 }
 
-export const getStaticProps: GetStaticProps = async(context) =>{
-    return {
-        props: {
-            characters: []
-        }
-    }
+export async function getStaticProps() {
+	const posts = getAllPosts()
+		.slice(0, 3)
+		.map((post) => post.meta);
+
+	return {
+		props: { posts },
+	};
 }
-
-export default Home
-
-

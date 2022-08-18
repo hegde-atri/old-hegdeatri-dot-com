@@ -12,10 +12,9 @@ export function Layout({ children, title, description, keywords }: any) {
 				<meta name="description" content={description} />
 				<meta name="keywords" content={keywords} />
 				<link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Header />
-            <div>{children}</div>
-            <Footer />
+			</Head>
+			<Header />
+			<div>{children}</div>
 		</div>
 	);
 }
