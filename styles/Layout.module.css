@@ -1,13 +1,13 @@
 .container {
   margin: auto;
   padding: 0.75rem;
-  width: 80%;
+  width: 60%;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   .container{
-    width: 20%;
-    padding: 20px;
+    width: 90%;
+    padding: 0.5rem;
   }
 }
 
