@@ -8,13 +8,18 @@
   --reach-dialog: 1;
   --extra-muted-light: #4F5155;
   --extra-muted-dark: #B6B8BA;
-  --logo-light: #4433FF;
-  --logo-dark: #617BFF;
+  --logo-light: #7237FD;
+  --logo-dark: #7267FD;
   --bg-light: #EFF1F5;
   --color-light: #071731;
-  --bg-dark: #0E141B;
+  --bg-dark: #060A13;
   --color-dark: #F2F5F7;
   --dark1: #1E262F;
+  --colour-peach: #DD7878;
+  --colour-blue: #04A5E5;
+  --colour-torquise: #38B7C7;
+  --colour-amethyst: #C678DD;
+  --colour-pink: #EA76CB;
 }
 
 html,

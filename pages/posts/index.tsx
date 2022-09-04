@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
+import Page from "@/components/Page";
 
 export default function PostsDefaultPage() {
   return (
-    <Layout>
+    <Page>
       <h1>Posts Page</h1>
-    </Layout>
+    </Page>
   )
 }

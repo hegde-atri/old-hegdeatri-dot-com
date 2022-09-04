@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { PostMeta } from "@/lib/posts";
 
-export default function Post({posts}: {posts: PostMeta[]}) {
+export const Post = ({posts}: IndexProps): JSX.Element => {
   return (
     <ul>
       {posts.map((post) => (
@@ -14,3 +13,5 @@ export default function Post({posts}: {posts: PostMeta[]}) {
     </ul>
   )
 }
+
+export default Post;
