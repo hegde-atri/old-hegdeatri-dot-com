@@ -7,6 +7,11 @@ import React from 'react'
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import Post from "@/components/Post";
 import { MDXProvider } from "@mdx-js/react";
+import { PostType } from "@/types/post"
+
+type IndexProps = {
+  posts: PostType[];
+};
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
 	return (

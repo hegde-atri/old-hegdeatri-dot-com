@@ -1,4 +1,9 @@
 import Link from "next/link";
+import { PostType } from "../types/post";
+
+type IndexProps = {
+  posts: PostType[];
+};
 
 export const Post = ({posts}: IndexProps): JSX.Element => {
   return (

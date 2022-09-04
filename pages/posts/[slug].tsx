@@ -10,7 +10,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
 import fs from "fs"
 import matter from "gray-matter";
-import mdxPrism from 'mdx-prism';
+const mdxPrism = require('mdx-prism');
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { postFilePaths } from "@/lib/posts";
@@ -46,7 +46,7 @@ const slugpage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const POSTS_PATH = path.join(process.cwd(), "posts");
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
+  const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`)
   const source = fs.readFileSync(postFilePath);
   const { content, data } = matter(source);
   const mdxSource = await serialize(content, {
