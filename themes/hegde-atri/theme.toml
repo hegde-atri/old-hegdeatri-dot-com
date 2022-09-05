@@ -1,0 +1,20 @@
+name = "hegde-atri"
+description = "A simple yet elegant blog theme"
+license = "MIT"
+homepage = "https://github.com/hegde-atri/hegdeatri-dot-com-v2"
+min_version = "0.1.0"
+demo = "https://new.hegdeatri.com"
+
+[extra]
+blog_menu = [
+  {url = "$BASE_URL", name = "Home"},
+  {url = "$BASE_URL/posts", name = "Posts",},
+  {url = "$BASE_URL/projects", name = "Projects",},
+  {url = "$BASE_URL/categories", name = "Categories",},
+  {url = "$BASE_URL/tags", name = "Tags",},
+  {url = "$BASE_URL/about", name = "About",},
+]
+
+[author]
+name = "Atri Hegde"
+homepage = "https://hegdeatri.com"
