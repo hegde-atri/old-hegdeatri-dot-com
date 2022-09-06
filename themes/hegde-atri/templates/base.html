@@ -1,0 +1,41 @@
+{% import 'macros.html' as macros %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/> <!-- Enable responsiveness on mobile devices-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+    <title>
+      {% block title %}
+        {{ config.title }}
+      {% endblock title %}
+    </title>
+    {% if config.generate_feed %}
+      <link rel="alternate" type={% if config.feed_filename == "atom.xml" %} "application/atom+xml" {% else %} "application/rss+xml" {% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}"/>
+    {% endif %}
+  </head>
+  <body>
+    <script>
+      (function initTheme() {
+          let body = document.getElementsByTagName("body")[0];
+          if (window.localStorage.getItem("theme") !== null) {
+              if (window.localStorage.getItem("theme") === "dark") {
+                  body.setAttribute("data-theme", "dark");
+              } else {
+                  body.setAttribute("data-theme", "light");
+              }
+          } else {
+              if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                  body.setAttribute("data-theme", "dark");
+              }
+          }
+      })();
+    </script>
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <script src="{{ get_url(path="main.js", trailing_slash=false) }}" type="text/javascript"></script>
+  </body>
+</html>

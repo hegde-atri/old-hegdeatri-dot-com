@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+{% import 'macros.html' as macros%}
 
 {% block content %}
 <h1 class="title">
   This is my blog made with Zola.
+  Hello!
 </h1>
+
+{{ macros::social_links(social_config=config.extra.social) }}
 {% endblock content %}

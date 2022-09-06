@@ -1,0 +1,32 @@
+{% macro social_links(social_config) %}
+  {% if social_config.github %}
+  <p>{{ social_config.github }}</p>
+  {% endif %}
+  {% if social_config.gitlab %}
+  {% endif %}
+  {% if social_config.linkedin %}
+  {% endif %}
+  {% if social_config.facebook %}
+  {% endif %}
+  {% if social_config.stackoverflow %}
+  {% endif %}
+  {% if social_config.keybase %}
+  {% endif %}
+  {% if social_config.customgit %}
+  {% endif %}
+  {% if social_config.generate_feed %}
+  {% endif %}
+  {% if social_config.email %}
+  {% endif %}
+{% endmacro %}
+
+{% macro page_publish_metadata(page) %}
+{% endmacro %}
+
+{% macro page_content_metadata(page)%}
+{% endmacro %}
+
+{% macro render_categories(categories) %}
+{% endmacro %}
+{% macro render_tags(tags) %}
+{% endmacro %}
