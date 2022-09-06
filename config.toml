@@ -1,38 +1,46 @@
 base_url = "https://new.hegdeatri.com"
+
+# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-build_search_index = true
-theme = "hegde-atri"
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "material-dark"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+theme = "xyblag"
+
+# Blog details, used in the homepage
 title = "Atri Hegde"
-description = "A personal blog theme"
-output_dir = "public"
+description = "Blog of hegde-atri"
+
 generate_feed = true
-feed_filename = "rss.xml"
 
 taxonomies = [
-  { name = "categories", feed = true},
-  { name = "tags", feed = true},
+    # You can enable/disable RSS
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
 ]
 
-[markdown]
-highlight_code = true
-highlight_theme = "one-dark"
-render_emoji = true
-external_links_target_blank = true
-external_links_no_follow = true
-external_links_no_referrer = true
-smart_punctuation = false
 
+# CUSTOM VARIABLES
 [extra]
+
+# Author name, displayed with copyright in footer
 author = "Atri Hegde"
-comments = true
 
-[slugify]
-paths = "on"
-taxonomies = "on"
-anchors = "on"
+# Menu shown in the navbar
+blog_menu = [
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/quotes", name = "Quotes"},
+    {url = "$BASE_URL/about", name = "About"},
+]
 
+disqus_shortname = "hegde-atri"
 
-
-[extra.social]
-github = "hegde-atri"
-gitlab = "hegde-atri"
+[extra.social_links]
+github = "https://github.com/hegde-atri"

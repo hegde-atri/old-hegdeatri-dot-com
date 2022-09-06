@@ -30,3 +30,16 @@
 {% endmacro %}
 {% macro render_tags(tags) %}
 {% endmacro %}
+
+{% macro comments(page, config) %}
+  {% if config.extra.comments %}
+    <script src="https://utteranc.es/client.js"
+            repo="hegde-atri/hegdeatri-dot-com-v2"
+            issue-term="pathname"
+            label="Comments"
+            theme="photon-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+  {% endif %}
+{% endmacro comments %}
