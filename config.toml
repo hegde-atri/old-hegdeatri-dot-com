@@ -1,10 +1,14 @@
 base_url = "https://new.hegdeatri.com"
 compile_sass = true
 build_search_index = true
+theme = "hegde-atri"
 
 [markdown]
 highlight_code = true
 highlight_theme = "one-dark"
 
 [extra]
+author = "Atri Hegde"
 comments = true
+
+[extra.social_links]
