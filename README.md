@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/hegde-atri/hegdeatri-dot-com-v2/badge)](https://www.codefactor.io/repository/github/hegde-atri/hegdeatri-dot-com-v2)
+[![CodeFactor](https://www.codefactor.io/repository/github/hegde-atri/hegdeatri-dot-com-v2/badge/nextjs)](https://www.codefactor.io/repository/github/hegde-atri/hegdeatri-dot-com-v2/overview/nextjs)
 
 # hegdeatri-dot-com-v2
 
