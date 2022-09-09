@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {% if config.generate_feed %}
+        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
+  </head>
+  <body>
+    <div class="container">
+      <div id="mobile-navbar" class="mobile-navbar">
+        <div class="mobile-header-logo">
+          <a href="/" class="logo">{{ config.title }}</a>
+        </div>
+        <div class="mobile-navbar-icon icon-out">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+        <ul class="mobile-menu-list">
+          {% for item in config.extra.navbar_items %}
+          <li>
+            <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <header id="header">
+        <div class="logo">
+          <a href="{{ config.base_url }}">
+            {{ config.extra.navbar_title }}
+          </a>
+          <nav class="menu">
+            <ul>
+              {% for item in config.extra.navbar_items %}
+                <li>
+                  <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                    {{ item.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </div>
+  </body>
+</html>

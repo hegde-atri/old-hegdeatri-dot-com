@@ -9,7 +9,7 @@ $theme-color-map: (
 );
 
 // TODO: allow to change that
-$main-colour: #c05b4d;
+$main-colour: #c678dd;
 $secondary-colour: #f8f5ec;
 $body-width: 800px;
 $mobile-navbar-height: 50px !default;
@@ -37,3 +37,20 @@ $decoration-font-family: Athelas, STHeiti, Microsoft Yahei, serif;
 @import "mobile";
 @import "slideout";
 @import "toc";
+
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+  $bg: #0d0d0e;
+  $c0: #ffffff;
+  $c1: invert(#333);
+  $c2: #7c7c7c;
+  $c3: invert(#aaa);
+  $c4: invert(#eee);
+  }
+  @media (prefers-color-scheme: light) {
+  $bg: #fff;
+  $c0: #000;
+  $c1: #505050;
+  $c2: #66666a;
+  $c3: #aaa;
+  $c4: #eee;
+  }

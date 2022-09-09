@@ -4,11 +4,11 @@
   justify-content: space-between;
 
   .logo {
-    font-family: Chancery, cursive, LiSu, sans-serif;
+    font-family: sans-serif, Chancery, cursive, LiSu, sans-serif;
     font-weight: 400;
 
     a {
-      color: #34495e;
+      color: #ABB2BF;
       font-size: 48px;
     }
   }
@@ -27,7 +27,7 @@
         @include underline-from-center;
 
         a {
-          color: #34495e;
+          color: #7e8b99;
           font-size: 18px;
         }
       }
