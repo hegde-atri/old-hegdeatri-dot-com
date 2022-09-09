@@ -1,16 +1,55 @@
 base_url = "https://new.hegdeatri.com"
+title = "Atri Hegde"
+description = "Simple place to showcase my projects and thoughts."
 compile_sass = true
 build_search_index = false
+minify_html = false
+generate_feed = true
+feed_filename = "rss.xml"
 
 taxomonies = [
-    { name = "categories", feed = true },
-    { name = "tags", feed = true },
+    { name = "categories", feed = true, paginate_by = 10 },
+    { name = "tags", feed = true, paginate_by = 10 },
 ]
 
 [markdown]
 highlight_code = true
 highlight_theme = "one-dark"
+render_emoji = true
+smart_punctuation = false
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
 
 [extra]
-author = "Atri Hegde"
-comments = true
+navbar_items = [
+    { code = "en", nav_items = [
+        { url = "$BASE_URL/", name = "Home" },
+        { url = "$BASE_URL/posts", name = "Posts" },
+        { url = "$BASE_URL/projects", name = "Projects" },
+        { url = "$BASE_URL/tags", name = "Tags" },
+        { url = "$BASE_URL/categories", name = "Categories" },
+    ] },
+]
+
+[extra.favicon]
+favicon_16x16 = "/icons/favicon-16x16.png"
+favicon_32x32 = "/icons/favicon-32x32.png"
+apple_touch_icon = "/icons/apple-touch-icon.png"
+safari_pinned_tab = "/icons/safari-pinned-tab.svg"
+webmanifest = "/icons/site.webmanifest"
+
+[extra.author]
+name = "Atri Hegde"
+avatar = "/images/avatar.png"
+
+[extra.social]
+linkedin = "atri-hegde-8a37a5215"
+stackoverflow = "15020804"
+email = "atri@hegdeatri.com"
+leetcode="hegde_atri"
+youtube = "UCHZwj1GpsDQ3B9S5VjeY36A"
+github = "hegde-atri"
+gitlab = "hegde-atri"
