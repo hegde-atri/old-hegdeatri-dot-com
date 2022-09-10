@@ -10,7 +10,7 @@ $theme-color-map: (
 
 // TODO: allow to change that
 $main-colour: #c678dd;
-$secondary-colour: #f8f5ec;
+$secondary-colour: #282c34;
 $body-width: 800px;
 $mobile-navbar-height: 50px !default;
 $code-colour: #c7254e;
@@ -18,15 +18,15 @@ $code-font-family: Consolas, Monaco, Menlo, Consolas, monospace !default;
 $decoration-font-family: Athelas, STHeiti, Microsoft Yahei, serif;
 
 @mixin min-screen($min-width: $body-width) {
-   @media screen and (min-width: $min-width) {
-     @content;
-   }
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
 }
 
 @mixin max-screen($max-width: $body-width) {
-   @media screen and (max-width: $max-width) {
-     @content;
-   }
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
 }
 
 @import "animations";
@@ -38,19 +38,3 @@ $decoration-font-family: Athelas, STHeiti, Microsoft Yahei, serif;
 @import "slideout";
 @import "toc";
 
-@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
-  $bg: #0d0d0e;
-  $c0: #ffffff;
-  $c1: invert(#333);
-  $c2: #7c7c7c;
-  $c3: invert(#aaa);
-  $c4: invert(#eee);
-  }
-  @media (prefers-color-scheme: light) {
-  $bg: #fff;
-  $c0: #000;
-  $c1: #505050;
-  $c2: #66666a;
-  $c3: #aaa;
-  $c4: #eee;
-  }

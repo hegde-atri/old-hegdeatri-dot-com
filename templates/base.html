@@ -7,6 +7,9 @@
     {% if config.generate_feed %}
         <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
     {% endif %}
+    {% block js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    {% endblock js %}
     <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
   </head>
   <body>
@@ -24,7 +27,7 @@
       <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
         <ul class="mobile-menu-list">
           {% for item in config.extra.navbar_items %}
-          <li>
+          <li class="mobile-menu-item">
             <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
               {{ item.name }}
             </a>
@@ -52,10 +55,13 @@
         </div>
       </header>
 
-      <main>
+      <main id="mobile-panel">
         {% block content %}
         {% endblock content %}
       </main>
     </div>
+    {% block js_body %}
+      <script type="text/javascript" src="{{ get_url(path="main.js", trailing_slash=false) }}" ></script>
+    {% endblock js_body %}
   </body>
 </html>
