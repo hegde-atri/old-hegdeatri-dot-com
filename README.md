@@ -2,6 +2,8 @@
 
 I am making this website using zola to replace my existing page at [hegdeatri.com](https://hegdeatri.com).
 
+## Colours
+
 ## Credits
 
-- I learned some advanced zola features and used some js snippets from xypnox's blag theme.
+- This theme was derived from the [even](https://github.com/getzola/even) theme.

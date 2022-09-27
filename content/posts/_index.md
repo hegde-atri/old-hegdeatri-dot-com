@@ -1,6 +1,5 @@
 +++
-title = "List of blog posts"
-sort_by = "date"
-page_template = "blog.html"
 paginate_by = 5
+sort_by = "date"
+page_template = "page.html"
 +++
