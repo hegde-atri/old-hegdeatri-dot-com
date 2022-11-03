@@ -1,3 +1,4 @@
-# hegdeatri-dot-com-v2
+# hegdeatri-dot-com v2
 
-My website at [hegdeatri.com]("https://hegdeatri.com").
+The next version of my [website](https://hegdeatri.com), built using [astro](https://astro.build).
+
