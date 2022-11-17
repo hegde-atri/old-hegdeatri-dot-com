@@ -1,6 +1,6 @@
 FROM node:16
 
-MAINTAINER Atri Hegde <iamatrihegde@outlook.com>
+LABEL MAINTAINER Atri Hegde <iamatrihegde@outlook.com>
 
 RUN node -v
 
