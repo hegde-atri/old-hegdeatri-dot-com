@@ -20,4 +20,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://hegdeatri.com/sitemap.xml
+Sitemap: https://hegdeatri.com/sitemap-index.xml
