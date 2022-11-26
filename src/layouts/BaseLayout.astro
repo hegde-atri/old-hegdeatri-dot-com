@@ -4,13 +4,14 @@ import Footer from '../components/Footer.astro';
 import HeadSEO from '../components/Header/HeadSEO.astro';
 import Head from '../components/Header/Head.astro';
 const { content = {} } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <Head />
-    <HeadSEO {content} canonicalURL={Astro.canonicalURL}/>
+    <HeadSEO {content} canonicalURL={canonicalURL}/>
 		<title>{content.title}</title>
   </head>
   <body>
