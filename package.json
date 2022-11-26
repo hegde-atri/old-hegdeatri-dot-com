@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "hegdeatri-dot-com",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -14,8 +14,6 @@
     "@astrojs/mdx": "^0.12.0",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^2.1.3",
-    "astro": "^1.6.10",
-    "tailwindcss": "^3.0.24"
+    "astro": "^1.6.10"
   }
 }
