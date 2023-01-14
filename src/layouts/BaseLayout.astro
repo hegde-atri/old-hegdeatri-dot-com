@@ -5,6 +5,7 @@ import HeadSEO from '../components/Header/HeadSEO.astro';
 import Head from '../components/Header/Head.astro';
 const { content = {} } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+console.log(content.title)
 ---
 
 <!DOCTYPE html>

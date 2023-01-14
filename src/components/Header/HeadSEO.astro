@@ -1,29 +1,19 @@
 ---
-import { SITE, OPEN_GRAPH } from '../../config';
-const { content = {}, canonicalURL } = Astro.props;
-const formattedContentTitle = content.title ? `${content.title} 🚀 ${SITE.title}` : SITE.title;
-const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
-const canonicalImageSrc = new URL(imageSrc, Astro.site);
-const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
+const { 
+  title,
+  description,
+  url,
+  image,
+} = Astro.props
+let subtitle = 'Atri Hegde'
 ---
 
-<!-- TODO: Page Metadata -->
-<link rel="canonical" href={canonicalURL} />
+<!-- open graph -->
+<meta property="og:title" content={`${title} - ${subtitle}`}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={url}>
+<meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image}>
 
-<!-- OpenGraph Tags -->
-<meta property="og:title" content={formattedContentTitle} />
-<meta property="og:type" content="article" />
-<meta property="og:url" content={canonicalURL} />
-<meta property="og:locale" content={content.ogLocale ?? SITE.defaultLanguage} />
-<meta property="og:image" content={canonicalImageSrc} />
-<meta property="og:image:alt" content={imageAlt} />
-<meta name="description" property="og:description" content={content.description ? content.description : SITE.description} />
-<meta property="og:site_name" content={SITE.title} />
-
-<!-- Twitter Tags -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={OPEN_GRAPH.twitter} />
-<meta name="twitter:title" content={formattedContentTitle} />
-<meta name="twitter:description" content={content.description ? content.description : SITE.description} />
-<meta name="twitter:image" content={canonicalImageSrc} />
-<meta name="twitter:image:alt" content={imageAlt} />
+<!-- page title -->
+<title>{title} - {subtitle}</title>
