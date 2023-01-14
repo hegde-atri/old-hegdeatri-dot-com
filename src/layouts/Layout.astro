@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header/Header.astro"
+import '../styles/global.css';
 const { title } = Astro.props
 ---
 <html lang="en">
@@ -8,10 +9,7 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <Header title={title}/>
   </head>
-  <body>
-    <h1>{title}</h1>
-    <article>
-      <slot />
-    </article>
+  <body class="w-11/12 mx-auto md:w-3/4">
+    <slot />
   </body>
 </html>
