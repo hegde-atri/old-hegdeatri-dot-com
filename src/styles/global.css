@@ -10,9 +10,9 @@ html {
     overflow: hidden;
     background: #c5daff;
     color: #31395b;
+    
     transition: 300ms;    
 }
-
 
 .dark body {
     background: #0f111a;
