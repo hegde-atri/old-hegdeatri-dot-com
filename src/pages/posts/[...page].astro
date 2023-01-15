@@ -4,7 +4,7 @@ import PostList from "../../components/Posts/PostList.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const PAGE_SIZE = 2;
+  const PAGE_SIZE = 1;
 
   let allPosts = await Astro.glob("./**/*.md*");
   let allSortedPosts = allPosts.sort(
@@ -19,7 +19,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 // const description = frontmatter.title;
 ---
-<Layout>
+<Layout title="Posts">
   <h1>All posts</h1>
   <PostList posts={page.data} />
   <Pagination page={page} />
