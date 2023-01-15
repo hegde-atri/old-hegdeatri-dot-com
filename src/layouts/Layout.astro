@@ -1,15 +1,14 @@
 ---
-import Header from "../components/Header/Header.astro"
-import '../styles/global.css';
-const { title } = Astro.props
+import Header from "../components/Header/Header.astro";
+import "../styles/global.css";
+const { title } = Astro.props;
 ---
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <Header title={title}/>
-  </head>
-  <body class="w-11/12 mx-auto md:w-3/4">
-    <slot />
+  <Header title={title} />
+  <body>
+    <div class="w-11/12 mx-auto md:w-3/4">
+      <slot />
+    </div>
   </body>
 </html>
