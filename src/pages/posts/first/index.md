@@ -1,6 +1,6 @@
 ---
 title: Hello, World
-date: 2022-08-28
+pubDate: 2022-08-28
 slug: hello-world
 draft: false
 ---

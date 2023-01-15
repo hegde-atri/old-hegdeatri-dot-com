@@ -1,9 +1,25 @@
-html {
-    background: white;
-    color: black;
+*{
+    box-sizing: border-box;
+    transition: 300ms;
 }
 
-.dark {
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #c5daff;
+    color: #31395b;
+
+    transition: 300ms;    
+}
+
+.dark body {
     background: #0f111a;
     color: #dfebff;
 }
+
+/* .dark html{
+    background: #0f111a;
+    color: #dfebff;
+} */
