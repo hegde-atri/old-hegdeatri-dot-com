@@ -3,14 +3,18 @@
     transition: 300ms;
 } */
 
-body,
-html {
+body {
     scroll-behavior: smooth;
     scrollbar-color: #445285;
     background: #c5daff;
     color: #31395b;
 
     transition: 300ms;    
+}
+
+.dark html {
+    background: #0f111a;
+    color: #dfebff;
 }
 
 .dark body {
