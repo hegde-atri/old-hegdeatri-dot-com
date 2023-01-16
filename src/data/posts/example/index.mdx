@@ -14,8 +14,22 @@ It probably isn't styled much, but Markdown does support:
 - [links](https://astro.build)
 - and more!
 
+```rust
+println!("HEllo");
+
 ```
-Hello
+
+```jsx
+export async function getStaticPaths() {
+  let allPosts = await Astro.glob("../../data/posts/**/*.md*");
+  const posts = allPosts.filter((post) => !post.frontmatter.draft);
+  return posts.map((post) => {
+    return {
+      params: { slug: post.frontmatter.slug },
+      props: { ...post },
+    };
+  });
+}
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra
@@ -36,3 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eg
 ### Another smaller ehading
 
 asldfjasfisa ;slifja w;ofpewisldkfj poaiweh fpoaweif hwao fhwpof hwqpf hasfohpwof hpfoi qhwpfo iuhwyfpoiuwhe fpiweufhs
+
+# Level 1 Heading
+
+# This is a heading lmao

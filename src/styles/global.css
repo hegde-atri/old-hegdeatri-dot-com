@@ -5,9 +5,8 @@
 
 body,
 html {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    scroll-behavior: smooth;
+    scrollbar-color: #445285;
     background: #c5daff;
     color: #31395b;
 
