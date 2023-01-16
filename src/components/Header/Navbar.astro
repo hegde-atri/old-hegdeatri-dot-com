@@ -1,24 +1,33 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
 let Links = [
-    { name: "Posts", link: "/posts" },
-    { name: "Projects", link: "/projects" },
-    { name: "Snippets", link: "/snippets" },
-    { name: "About", link: "/arabout" },
-  ];
+  { name: "Posts", link: "/posts" },
+  { name: "Projects", link: "/projects" },
+  { name: "Snippets", link: "/snippets" },
+  { name: "About", link: "/arabout" },
+];
 ---
 
-<nav class="flex items-center justify-between bg-background-500 dark:bg-background-light p-3 rounded-b-lg mx-auto sm:w-10/12 md:w-8/12">
+<nav
+  class="flex items-center justify-between bg-background-500 dark:bg-background-light p-3 rounded-b-lg mx-auto sm:w-10/12 md:w-8/12"
+>
   <span class="flex items-center">
     <img src="/images/logo.png" height="50" width="50" />
     <h1 class="pl-3 text-white dark:text-indigo-100 text-xl font-sans brand">Atri Hegde</h1>
   </span>
   <div class="ml-auto space-x-3">
-    {Links.map((item, _)=> {
-      return (
-      <a class="text-foreground-100 hover:text-white hover:bg-background-600 dark:hover:bg-background-lighter p-1 pt-2 pb-2 rounded transition duration-200" href={item.link}>{item.name}</a>
-      )
-    })}
+    {
+      Links.map((item, _) => {
+        return (
+          <a
+            class="text-foreground-100 hover:text-white hover:bg-background-600 dark:hover:bg-background-lighter p-1 pt-2 pb-2 rounded transition duration-200"
+            href={item.link}
+          >
+            {item.name}
+          </a>
+        );
+      })
+    }
   </div>
   <span class="ml-6 mr-2"><ThemeIcon /></span>
 </nav>

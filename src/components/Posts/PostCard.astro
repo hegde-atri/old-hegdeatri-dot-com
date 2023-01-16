@@ -5,19 +5,51 @@ function formatDate(date: Date) {
 }
 ---
 
-<article>
-  <h3 class="font-size-1">
-    <a href={`/post/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+<article class="m-2 p-3 mx-auto w-3/5 flex flex-col ">
+  <h3 class="text-2xl font-bold hover-effect">
+    <a class="text-background dark:text-foreground" href={`/post/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
   </h3>
-  <div class="meta-information">
-    <p>
+  <div class="flex flex-col justify-between">
+    <p class="">
       {post.frontmatter.description}
     </p>
     <p>
       <span>Published in</span>
-      <time class="capitalize" datetime={post.frontmatter.pubDate}
+      <time class="" datetime={post.frontmatter.pubDate}
         >{formatDate(post.frontmatter.pubDate)}
       </time>
     </p>
   </div>
 </article>
+<style>
+
+    a {
+  color: #18272F;
+  position: relative;
+  text-decoration: none;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+  background: black;
+}
+
+:global(.dark) a::before {
+  background: white;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+  
+</style>
