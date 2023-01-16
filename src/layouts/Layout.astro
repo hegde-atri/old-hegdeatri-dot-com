@@ -1,13 +1,13 @@
 ---
 import Header from "../components/Header/Header.astro";
 import "../styles/global.css";
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-  <Header title={title} />
+  <Header title={title} description={description}/>
   <body>
-    <div class="w-11/12 mx-auto md:w-3/4 mt-5">
+    <div class="w-11/12 mx-auto md:w-3/4 mt-5 scroll-auto">
       <slot />
     </div>
   </body>

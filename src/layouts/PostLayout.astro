@@ -1,7 +1,9 @@
 ---
 import Layout from "./Layout.astro";
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
-<Layout title={title}>
-    <slot />
+<Layout title={title} description={description}>
+    <article class="prose mx-auto">
+        <slot />
+    </article>
 </Layout>
