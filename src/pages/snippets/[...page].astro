@@ -1,27 +1,27 @@
 ---
 import Pagination from "../../components/Pagination.astro";
-import PostList from "../../components/Posts/PostList.astro";
+import SnippetList from "../../components/Snippets/SnippetList.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 8;
 
-  let allPosts = await Astro.glob("../../data/posts/**/*.md*");
-  const posts = allPosts.filter((post) => !post.frontmatter.draft);
-  let allSortedPosts = posts.sort(
+  let allSnippets = await Astro.glob("../../data/snippets/**/*.md*");
+  const snippets = allSnippets.filter((snippet) => !snippet.frontmatter.draft);
+  let allSortedSnippets = snippets.sort(
     (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
   );
 
-  return paginate(allSortedPosts, {
+  return paginate(snippets, {
     pageSize: PAGE_SIZE,
   });
 }
 
 const { page } = Astro.props;
 ---
-<Layout title="Posts">
-  <h1>All posts</h1>
-  <PostList posts={page.data} />
+<Layout title="Snippets">
+  <h1>All snippets</h1>
+  <SnippetList posts={page.data} />
   <Pagination page={page} />
 </Layout>
 

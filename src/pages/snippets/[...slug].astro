@@ -1,0 +1,22 @@
+---
+import SnippetLayout from "../../layouts/SnippetLayout.astro";
+
+export async function getStaticPaths() {
+  let posts = await Astro.glob("../../data/snippets/**/*.md*");
+  const snippets = posts.filter((snippet) => !snippet.frontmatter.draft);
+  return snippets.map((snippet) => {
+    return {
+      params: { slug: snippet.frontmatter.slug },
+      props: { ...snippet },
+    };
+  });
+}
+
+const { Content, frontmatter } = Astro.props;
+const title = frontmatter.title;
+const description = frontmatter.description || "A code snippet about " + title;
+---
+
+<SnippetLayout title={title} description={description}>
+  <Content />
+</SnippetLayout>

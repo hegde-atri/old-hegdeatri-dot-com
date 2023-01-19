@@ -1,0 +1,8 @@
+---
+import SnippetCard from "./SnippetCard.astro";
+const { posts } = Astro.props;
+---
+
+<section>
+    { posts.map((s) => <SnippetCard post={s} />)}
+</section>

@@ -1,0 +1,23 @@
+---
+const { post } = Astro.props;
+function formatDate(date: Date) {
+  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1");
+}
+---
+
+<article class="m-2 p-3 mx-auto w-3/5 flex flex-col">
+  <div class="flex flex-col">
+    <h3 class="text-2xl font-bold hover-effect">
+      <a class="text-background dark:text-foreground" href={`/snippets/${post.frontmatter.slug}`}
+        >{post.frontmatter.title}</a
+      >
+    </h3>
+    <p>
+      <span>Published in</span>
+      <time class="" datetime={post.frontmatter.pubDate}>{formatDate(post.frontmatter.pubDate)}</time>
+    </p>
+  </div>
+  <p class="">
+    {post.frontmatter.description}
+  </p>
+</article>
