@@ -19,6 +19,19 @@
   Theme
 </button> -->
 <style>
+  .sun {
+    fill: black;
+  }
+  .moon {
+    fill: transparent;
+  }
+
+  :global(.dark) .sun {
+    fill: transparent;
+  }
+  :global(.dark) .moon {
+    fill: white;
+  }
 </style>
 <!-- Make script inline(not bundled to external file) to avoid flash between pages -->
 <script is:inline>
