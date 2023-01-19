@@ -9,8 +9,8 @@ export async function getStaticPaths({ paginate }) {
   let allPosts = await Astro.glob("../../data/posts/**/*.md*");
   const posts = allPosts.filter((post) => !post.frontmatter.draft);
   let allSortedPosts = posts.sort(
-    (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
-  );
+    (a, b) => new Date(a.frontmatter.date).valueOf() - new Date(b.frontmatter.date).valueOf()
+  ).reverse();
 
   return paginate(allSortedPosts, {
     pageSize: PAGE_SIZE,
