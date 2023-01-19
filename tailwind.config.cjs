@@ -38,6 +38,19 @@ module.exports = {
 				// 300
 				DEFAULT: '#b1cbff',
 			},
+			'red': {
+				50: '#fff0f3',
+				100: '#ffe2e9',
+				200: '#ffcad9',
+				300: '#ff9fb9',
+				400: '#ff6994',
+				500: '#ff3d7a',
+				600: '#ed1160',
+				700: '#c80852',
+				800: '#a8094c',
+				900: '#8f0c47',
+				DEFAULT: '#ff3d7a',
+			},					
 			'tb': {
 				50: '#eefdfc',
 				00: '#d3faf9',
@@ -59,6 +72,7 @@ module.exports = {
 			indigo: colors.indigo,
 			yellow: colors.yellow,
 			pink: colors.pink,
+			grey: colors.gray,
 			
 			
 		},

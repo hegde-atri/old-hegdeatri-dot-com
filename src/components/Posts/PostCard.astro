@@ -5,44 +5,50 @@ function formatDate(date: Date) {
 }
 ---
 
-<article class="m-2 p-3 mx-auto w-3/5 flex flex-col">
+<article class="m-2 p-3 mx-auto w-3/5 flex flex-col mb-8">
   <div class="flex flex-col">
-    <h3 class="text-2xl font-bold hover-effect">
-      <a class="text-background dark:text-foreground" href={`/posts/${post.frontmatter.slug}`}
+    <h3 class="text-2xl font-bold hover-effect p-2">
+      <a class="text-background dark:text-foreground-200" href={`/posts/${post.frontmatter.slug}`}
         >{post.frontmatter.title}</a
       >
     </h3>
-    <p>
+    <blockquote class="border-l-4 border-l-foreground-500 pl-2 text-grey-400">
       <span>Published in</span>
       <time class="" datetime={post.frontmatter.pubDate}>{formatDate(post.frontmatter.pubDate)}</time>
-    </p>
+    </blockquote>
   </div>
-  <p class="">
-    {post.frontmatter.description}
+  <p class="text-grey-200 m-1 p-1">
+    {post.frontmatter.description || "A post about " + post.frontmatter.title}
   </p>
 </article>
 <style>
+  .title {
+    }
   article {
-    background: linear-gradient(to right, black 4px, transparent 4px) 0 0,
-      linear-gradient(to left, black 4px, transparent 4px) 100% 100%,
-      linear-gradient(to bottom, black 4px, transparent 4px) 0 0,
-      linear-gradient(to top, black 4px, transparent 4px) 100% 100%;
+    background: linear-gradient(to right, white 4px, transparent 4px) 0 0,
+      linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
+      linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
+      linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
 
     background-repeat: no-repeat;
     background-size: 20px 20px;
     transition: 500ms;
+    border-radius: 8px;
+    opacity: 0.75;
+    transition: opacity 0.3s ease-out;
   }
 
   article:hover {
+    opacity: 1;
     background:
-    linear-gradient(to right, black 4px, transparent 4px) 0 0,
-    linear-gradient(to right, black 4px, transparent 4px) 0 100%,
-    linear-gradient(to left, black 4px, transparent 4px) 100% 0,
-    linear-gradient(to left, black 4px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, black 4px, transparent 4px) 0 0,
-    linear-gradient(to bottom, black 4px, transparent 4px) 100% 0,
-    linear-gradient(to top, black 4px, transparent 4px) 0 100%,
-    linear-gradient(to top, black 4px, transparent 4px) 100% 100%;
+    linear-gradient(to right, white 4px, transparent 4px) 0 0,
+    linear-gradient(to right, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
   }
 
   /* Underline effect title */
@@ -50,6 +56,7 @@ function formatDate(date: Date) {
     color: #18272f;
     position: relative;
     text-decoration: none;
+    box-shadow: 0 0 1px transparent;
   }
 
   a::before {
@@ -67,7 +74,8 @@ function formatDate(date: Date) {
   }
 
   :global(.dark) a::before {
-    background: #c5daff;
+    background: #ff3d7a;
+    
   }
 
   a:hover::before {
