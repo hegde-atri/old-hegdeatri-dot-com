@@ -2,7 +2,7 @@
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  let allPosts = await Astro.glob("../../data/posts/**/*.md*");
+  let allPosts = await Astro.glob("../../../data/posts/**/*.md*");
   const posts = allPosts.filter((post) => !post.frontmatter.draft);
   return posts.map((post) => {
     return {

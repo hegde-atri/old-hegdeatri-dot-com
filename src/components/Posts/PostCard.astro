@@ -5,7 +5,7 @@ function formatDate(date: Date) {
 }
 ---
 
-<article class="m-2 p-3 mx-auto w-3/5 flex flex-col mb-8">
+<article class="m-2 p-3 mx-auto w-3/5 flex flex-col mb-8 btn">
   <div class="flex flex-col">
     <h3 class="text-2xl font-bold hover-effect p-2">
       <a class="text-background dark:text-foreground-200" href={`/posts/${post.frontmatter.slug}`}
@@ -13,7 +13,6 @@ function formatDate(date: Date) {
       >
     </h3>
     <blockquote class="border-l-4 border-l-foreground-500 pl-2 text-grey-400">
-      <span>Published in</span>
       <time class="" datetime={post.frontmatter.pubDate}>{formatDate(post.frontmatter.pubDate)}</time>
     </blockquote>
   </div>
@@ -22,33 +21,15 @@ function formatDate(date: Date) {
   </p>
 </article>
 <style>
-  .title {
-    }
   article {
-    background: linear-gradient(to right, white 4px, transparent 4px) 0 0,
-      linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
-      linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
-      linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
-
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
     transition: 500ms;
     border-radius: 8px;
-    opacity: 0.75;
+    opacity: 0.85;
     transition: opacity 0.3s ease-out;
   }
 
   article:hover {
     opacity: 1;
-    background:
-    linear-gradient(to right, white 4px, transparent 4px) 0 0,
-    linear-gradient(to right, white 4px, transparent 4px) 0 100%,
-    linear-gradient(to left, white 4px, transparent 4px) 100% 0,
-    linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
-    linear-gradient(to bottom, white 4px, transparent 4px) 100% 0,
-    linear-gradient(to top, white 4px, transparent 4px) 0 100%,
-    linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
   }
 
   /* Underline effect title */
@@ -75,7 +56,6 @@ function formatDate(date: Date) {
 
   :global(.dark) a::before {
     background: #ff3d7a;
-    
   }
 
   a:hover::before {

@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 8;
 
-  let allSnippets = await Astro.glob("../../data/snippets/**/*.md*");
+  let allSnippets = await Astro.glob("../../../data/snippets/**/*.md*");
   const snippets = allSnippets.filter((snippet) => !snippet.frontmatter.draft);
   let allSortedSnippets = snippets.sort(
     (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
