@@ -1,13 +1,13 @@
 # hegdeatri-dot-com v2
 
-The next version of my [website](https://old.hegdeatri.com).
+The new version of my [old website](https://old.hegdeatri.com).
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 ## To-do
 - [X] Initial UI sketch
 - [X] Header/Navbar
-- [ ] Landing Page
-- [ ] About Page
+- [-] Landing Page
+- [X] About Page
 - [X] Posts page, and Post List
 - [X] Add comment sections to posts
 - [ ] Projects page, and Projects List
