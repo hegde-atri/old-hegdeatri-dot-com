@@ -1,6 +1,6 @@
 # hegdeatri-dot-com v2
 
-The next version of my [website](https://hegdeatri.com).
+The next version of my [website](https://old.hegdeatri.com).
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 ## To-do
