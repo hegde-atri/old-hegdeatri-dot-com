@@ -1,6 +1,6 @@
 ---
 title: Test snippet
-pubDate: 2022-08-17
+pubDate: 2023-01-17
 slug: test
 draft: false
 ---

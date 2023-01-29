@@ -3,6 +3,7 @@ const { post } = Astro.props;
 function formatDate(date: Date) {
   return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1");
 }
+// TODO: include time to read.
 ---
 
 <article class="m-2 p-3 mx-auto w-3/5 flex flex-col mb-8 btn">
@@ -52,10 +53,11 @@ function formatDate(date: Date) {
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
     background: #445285;
+  box-shadow: 0px 0px 5px #19bdc1;
   }
 
   :global(.dark) a::before {
-    background: #ff3d7a;
+    background: #1a7984;
   }
 
   a:hover::before {

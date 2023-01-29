@@ -14,9 +14,11 @@ export async function getStaticPaths() {
 
 const { Content, frontmatter } = Astro.props;
 const title = frontmatter.title;
-const description = frontmatter.description || "A post about " + title;
+const description = frontmatter.description ?? "A post about " + title;
+const comments = frontmatter.comments ?? true;
+// TODO include more metadata, and have pub date and other things before the content.
 ---
 
-<PostLayout title={title} description={description}>
+<PostLayout title={title} description={description} comments={comments}>
   <Content />
 </PostLayout>
