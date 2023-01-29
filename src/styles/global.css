@@ -4,58 +4,73 @@
 } */
 
 body {
-    scroll-behavior: smooth;
-    scrollbar-color: #445285;
-    background: #cdd8eb;
-    color: #31395b;
+  scroll-behavior: smooth;
+  scrollbar-color: #445285;
+  background: #cdd8eb;
+  color: #31395b;
 
-    transition: 300ms;    
+  transition: 300ms;
 }
 
 .dark html {
-    background: #0f111a;
-    color: #dfebff;
+  background: #0f111a;
+  color: #dfebff;
 }
 
 .dark body {
-    background: #0f111a;
-    color: #dfebff;
+  background: #0f111a;
+  color: #dfebff;
 }
 
 /* Styling toc */
 .toc {
-    width: 300px;
-    display: flex;
-    word-wrap: break-word;
-    position: fixed;
-    align-items: center;
-    margin-left: 600px;
-    top: 0px;
-    height: 100vh;
-    opacity: 0.2;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
+  width: 300px;
+  display: flex;
+  word-wrap: break-word;
+  position: fixed;
+  align-items: center;
+  margin-left: 600px;
+  top: 0px;
+  height: 100vh;
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+}
+
 .toc:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 @media only screen and (max-width: 1200px) {
-    .toc {
-        visibility: hidden;
-    }
+  .toc {
+    visibility: hidden;
+  }
 }
 
 .toc-link {
-    color: #b1cbff;
-    text-decoration: none;
-    transition: all 0.2s ease-out;
-  }
-  .toc-link:hover {
-    color: #1d525c;
-    text-decoration: none;
+  color: #b1cbff;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+.toc-link:hover {
+  color: #1d525c;
+  text-decoration: none;
+}
 
-  }
+[astro-icon] {
+  height: 35px;
+  width: 35px;
+  transition: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  color: #b1cbff;
+}
+
+[astro-icon]:hover {
+  color: #ff3d7a;
+}
+
+/* [astro-icon="annotation"] {
+} */
 
 /* .dark html{
     background: #0f111a;

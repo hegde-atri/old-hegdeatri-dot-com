@@ -1,10 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Socials from "../components/Socials.astro";
 ---
 
 <Layout title="Atri Hegde">
-	BaseLayout
+  <div class="text-center">
+    <h1 class="text-3xl font-bold mt-10">Atri Hegde</h1>
+    <p class="text-background-300 mt-5">"The bridge between reality and dreams is work"</p>
+    <!-- Image here -->
+    <p class="text-foreground-100 mt-5">I am a undergraduate student at the University of Sheffield, studying Software Engineering (Comp Sci).</p>
+    <div class="mt-10">
+      <Socials class="text-center flex space-x-5 justify-center" />
+    </div>
+  </div>
 </Layout>
 
 <style></style>

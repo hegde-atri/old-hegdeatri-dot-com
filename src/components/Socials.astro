@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon";
+
+const Links = [
+  { icon: "tabler:brand-linkedin", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "tabler:brand-github", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "tabler:brand-gitlab", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "ph:youtube-logo-light", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "mdi:stackoverflow", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "tabler:mail", link: "https://linkedin.com/in/hegde-atri" },
+  { icon: "mdi:rss", link: "https://linkedin.com/in/hegde-atri" },
+];
+
+const styles = Astro.props;
+---
+
+<div class={styles.class}>
+  {
+    Links.map((item, _) => {
+      return (
+        <a href={item.link}>
+          <Icon name={item.icon} />
+        </a>
+      );
+    })
+  }
+</div>
