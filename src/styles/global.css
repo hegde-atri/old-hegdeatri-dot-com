@@ -28,7 +28,8 @@ body {
   word-wrap: break-word;
   position: fixed;
   align-items: center;
-  margin-left: 600px;
+  /* was 600 px */
+  margin-left: 40rem;
   top: 150px;
   height: 80vh;
   opacity: 0.2;
