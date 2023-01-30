@@ -1,5 +1,6 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
+import { getReadingTime } from "../../lib/readingTime";
 
 export async function getStaticPaths() {
   let allPosts = await Astro.glob("../../../data/posts/**/*.md*");
@@ -12,13 +13,34 @@ export async function getStaticPaths() {
   });
 }
 
-const { Content, frontmatter } = Astro.props;
+function formatDate(date: Date) {
+  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1");
+}
+
+const { Content, frontmatter, compiledContent } = Astro.props;
 const title = frontmatter.title;
 const description = frontmatter.description ?? "A post about " + title;
 const comments = frontmatter.comments ?? true;
-// TODO include more metadata, and have pub date and other things before the content.
 ---
 
 <PostLayout title={title} description={description} comments={comments}>
+  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-300">
+    <!-- TODO TAGS -->
+    {
+      frontmatter.pubDate === frontmatter.date ? (
+        <p>
+          {" "}
+          <span class="font-bold text-background-500">Published: </span>
+          {formatDate(frontmatter.pubDate)}
+        </p>
+      ) : (
+        <p>
+          <span class="font-bold text-background-500">Published: </span>
+          {formatDate(frontmatter.pubDate)} (Updated: {formatDate(frontmatter.date)})
+        </p>
+      )
+    }
+    <p><span class="font-bold text-background-500">Reading time: </span>{getReadingTime(compiledContent())} minutes</p>
+  </div>
   <Content />
 </PostLayout>

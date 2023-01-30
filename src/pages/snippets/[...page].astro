@@ -20,9 +20,19 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 <Layout title="Snippets">
-  <h1>All snippets</h1>
+  <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50">All snippets</h1>
   <SnippetList posts={page.data} />
   <Pagination page={page} />
 </Layout>
-
-
+<style>
+  h1:after { 
+  content:"";
+  display: block;
+  align-content: center;
+  background: #ff3d7a; 
+  width:175px; 
+  height:4px; 
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #e984a4;
+}
+</style>

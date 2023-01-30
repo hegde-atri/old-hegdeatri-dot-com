@@ -1,6 +1,7 @@
 ---
 title: Migrating from my old site!
 pubDate: 2023-01-30
+date: 2023-01-30
 slug: first-post
 description: How I switched from zola to Astro!
 draft: true
