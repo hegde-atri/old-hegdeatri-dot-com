@@ -13,7 +13,7 @@ comments: true
 
 About 10 months ago, I made my first website. This was just plain HTML and CSS, but I quickly
 moved onto a static site generator called [zola](https://www.getzola.org). I used a prebuilt theme
-and called it a day. As I got deeper and deeper into programming and learning linux and self-hosting,
+and called it a day. You can still visit it [here](old.hegdeatri.com). As I got deeper and deeper into programming and learning linux and self-hosting,
 I wasn't content with someone else's theme. I wanted to make my own theme.
 
 ## Choosing the framework
@@ -44,17 +44,24 @@ and building up the website.
 
 - A lot of things I wanted to do didn't have extensive docs, and experimenting was required, especially for remark/rehype.
   I couldn't get remark working, so I had to use rehype instead.
-- Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue :thinking:
+- Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue 🤔.
+- This website is almost javascript free apart from the Theme switcher, [comments](https://github.com/utterance/utterances)
+(Under MIT License) and [Icons](https://github.com/iconify/iconify)(Under MIT License). This means that you can easily browse
+most of my website without loading any javascript!!
+- Mobile friendly, I not motivated to making a mobile first approach. That being said my website is still 100% usuable on a
+mobile phone, except from the navbar which is hard to use, but will be updated to be 100% usable in the near future.
+- The urge to create eye-candy javascript bloated animations/effects but I wanted my site to be clean and minimal.
 
 ## Migration
 
 Although I could copy the markdown files of my posts to this site without affecting the links, I felt
 like a clean slate was what I needed. This was mostly since I became more knowledgable about the things
-I am passionate about, my opinions and view have changed quite a bit from earlier.
+I am passionate about, my opinions and view have changed quite a bit from earlier. I do plan on re-writing a
+few articles for the new website.
 
 ## Conclusion
 
 1 month later, and here we are! I think the website looks beautiful, although I wouldn't recommend turning
-on light mode 😅. There are still a few features missing, like search, categories for posts and the projects page.
+on light mode 😅. There are still a few features missing, like search and the projects page.
 
 Overall I think Astro is a really cool framework and I'll definitely be using it for upcoming projects.
