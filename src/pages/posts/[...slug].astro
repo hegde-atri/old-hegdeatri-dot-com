@@ -21,11 +21,13 @@ function formatDate(date: Date) {
 const { Content, frontmatter, compiledContent } = Astro.props;
 const title = frontmatter.title;
 const description = frontmatter.description ?? "A post about " + title;
+const image = frontmatter.image;
+const keywords = frontmatter.tags;
 const comments = frontmatter.comments ?? true;
 ---
 
-<PostLayout title={title} description={description} comments={comments}>
-  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-200 flex flex-row justify-between">
+<PostLayout title={title} description={description} comments={comments} image={image} keywords={keywords}>
+  <div class="bg-foreground-300 dark:bg-background-light rounded-md px-3 py-0.5 text-background dark:text-background-200 flex flex-row justify-between">
     <!-- TODO TAGS -->
     {
       frontmatter.pubDate === frontmatter.date ? (

@@ -3,7 +3,7 @@ import Layout from "./Layout.astro";
 const { title, description, comments, image, url, keywords } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} image={image} url={url} keywords={keywords}>
   <article class="prose dark:prose-invert mx-auto my-10">
     <h1>{title}</h1>
     <slot />

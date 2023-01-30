@@ -47,19 +47,28 @@ body {
 }
 
 .toc-link {
-  color: #b1cbff;
+  color: #445285;
   text-decoration: none;
   transition: all 300ms ease-in-out;
 }
+.dark .toc-link {
+  color: #b1cbff;
+}
 .toc-link:hover {
-  color: #d3faf9;
+  color: #0f111a;
   text-decoration: none;
+}
+.dark .toc-link:hover{
+  color: #d3faf9;
 }
 
 [astro-icon] {
   transition: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
+  color: #252A40;
+}
+.dark [astro-icon] {
   color: #b1cbff;
 }
 
