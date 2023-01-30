@@ -1,32 +1,41 @@
 ---
-const { 
-  title,
-  description,
-  url,
-  image,
-} = Astro.props
-let subtitle = 'Atri Hegde'
+let { title, description, url, image, keywords } = Astro.props;
+const tags: String = "Atri Hegde, Atri hedge, hegdeatri, hedgeatri, hegdeatri-dot-com, Personal site, Portfolio, Resume, rust, linux";
+
+// Some default if properties are missing
+description = description ?? "Atri's Personal Site with Portfolio, Projects, Code snippets and blog post";
+title = title ?? "Title missing";
+url = url ?? Astro.url;
+image = image ?? "images/logo.png";
+if (keywords == undefined) {
+  keywords = tags;
+} else {
+  keywords = keywords + ", " + tags;
+}
+
+const subtitle = "Atri Hegde";
 ---
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
-    <!-- SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <meta name="generator" content={Astro.generator} />
+  <!-- SEO -->
 
-    <meta name="robots" content="index, follow">
-    <meta name="description" content={description}>
-    <!-- <meta name="keywords" content="HTML, CSS, JavaScript"> -->
-    <meta name="author" content="Atri Hegde">
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Atri Hegde" />
 
-    <!-- open graph -->
-    <meta property="og:title" content={`${title} - ${subtitle}`}>
-    <meta property="og:description" content={description}>
-    <meta property="og:type" content="website">
-    <meta property="og:url" content={url}>
-    <meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image}>
+  <!-- open graph -->
+  <meta property="og:title" content={`${title} - ${subtitle}`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
 
-    <!-- page title -->
-    <title>{title} - {subtitle}</title>
+  <!-- page title -->
+  <title>{title} - {subtitle}</title>
 </head>
