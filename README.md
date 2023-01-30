@@ -7,6 +7,7 @@ The new version of my [old website](https://old.hegdeatri.com).
 ## To-do
 - [X] Initial UI sketch
 - [X] Header/Navbar
+    - [ ] Mobile friendly navbar
 - [X] Landing Page
 - [X] About Page
 - [X] Posts page, and Post List
