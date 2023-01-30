@@ -3,8 +3,8 @@ title: Migrating from my old site!
 pubDate: 2023-01-30
 date: 2023-01-30
 slug: first-post
-description: How I switched from zola to Astro!
-draft: true
+description: Journey of my website from plain HTML to Zola to Astro!
+draft: false
 comments: true
 ---
 
@@ -38,6 +38,10 @@ After 2 months, I had a Eureka moment! I knew what I wanted now, so I started re
 and building up the website.
 
 ### Problems I encountered
+
+- A lot of things I wanted to do didn't have extensive docs, and experimenting was required, especially for remark/rehype.
+I couldn't get remark working, so I had to use rehype instead.
+- Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue :thinking:
 
 ## Migration
 

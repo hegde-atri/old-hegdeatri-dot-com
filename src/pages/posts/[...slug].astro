@@ -24,23 +24,23 @@ const comments = frontmatter.comments ?? true;
 ---
 
 <PostLayout title={title} description={description} comments={comments}>
-  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-300">
+  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-200">
     <!-- TODO TAGS -->
     {
       frontmatter.pubDate === frontmatter.date ? (
         <p>
           {" "}
-          <span class="font-bold text-background-500">Published: </span>
+          <span class="font-bold text-background-400">Published: </span>
           {formatDate(frontmatter.pubDate)}
         </p>
       ) : (
         <p>
-          <span class="font-bold text-background-500">Published: </span>
+          <span class="font-bold text-background-400">Published: </span>
           {formatDate(frontmatter.pubDate)} (Updated: {formatDate(frontmatter.date)})
         </p>
       )
     }
-    <p><span class="font-bold text-background-500">Reading time: </span>{getReadingTime(compiledContent())} minutes</p>
+    <p><span class="font-bold text-background-400">Reading time: </span>{getReadingTime(compiledContent())} minutes</p>
   </div>
   <Content />
 </PostLayout>

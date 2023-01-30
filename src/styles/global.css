@@ -29,7 +29,7 @@ body {
   position: fixed;
   align-items: center;
   margin-left: 600px;
-  /* top: 100px; */
+  top: 150px;
   height: 80vh;
   opacity: 0.2;
   transition: opacity 0.5s ease-in-out;
@@ -56,8 +56,6 @@ body {
 }
 
 [astro-icon] {
-  height: 35px;
-  width: 35px;
   transition: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
