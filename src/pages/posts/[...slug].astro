@@ -1,5 +1,6 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
+import { Icon } from "astro-icon";
 import { getReadingTime } from "../../lib/readingTime";
 
 export async function getStaticPaths() {
@@ -24,23 +25,31 @@ const comments = frontmatter.comments ?? true;
 ---
 
 <PostLayout title={title} description={description} comments={comments}>
-  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-200">
+  <div class="bg-background-light rounded-md px-3 py-0.5 text-background-200 flex flex-row justify-between">
     <!-- TODO TAGS -->
     {
       frontmatter.pubDate === frontmatter.date ? (
-        <p>
-          {" "}
-          <span class="font-bold text-background-400">Published: </span>
-          {formatDate(frontmatter.pubDate)}
+        <p class="flex items-center">
+          <Icon name="ic:baseline-calendar-month" height="25" />
+          <span class="pl-1">{formatDate(frontmatter.pubDate)}</span>
         </p>
       ) : (
-        <p>
-          <span class="font-bold text-background-400">Published: </span>
-          {formatDate(frontmatter.pubDate)} (Updated: {formatDate(frontmatter.date)})
-        </p>
+        <span class="flex">
+          <p class="flex items-center">
+            <Icon name="ic:outline-update" height="25" />
+            <span class="pl-1">{formatDate(frontmatter.date)}</span>
+          </p>
+          <p class="flex pl-5 text-background-400 items-center">
+            <Icon name="ic:baseline-calendar-month" height="25" />
+            <span class="pl-1">{formatDate(frontmatter.pubDate)}</span>
+          </p>
+        </span>
       )
     }
-    <p><span class="font-bold text-background-400">Reading time: </span>{getReadingTime(compiledContent())} minutes</p>
+    <p class="flex items-center">
+      <Icon name="mdi:alarm-clock" height="25" />
+      <span class="pl-1">{getReadingTime(compiledContent())} minutes</span>
+    </p>
   </div>
   <Content />
 </PostLayout>
