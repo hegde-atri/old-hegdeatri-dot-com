@@ -1,19 +1,20 @@
 # hegdeatri-dot-com v2
 
 The new version of my [old website](https://old.hegdeatri.com).
+
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 ## To-do
 - [X] Initial UI sketch
 - [X] Header/Navbar
-- [-] Landing Page
+- [X] Landing Page
 - [X] About Page
 - [X] Posts page, and Post List
 - [X] Add comment sections to posts
 - [ ] Projects page, and Projects List
 - [X] Add code snippets page
 - [X] Themes
-- [ ] Create tags/categories page
+- [X] Create tags/categories page
 - [X] Add TOC to posts/projects
 - [ ] Legal page
 - [X] Make the First Post!

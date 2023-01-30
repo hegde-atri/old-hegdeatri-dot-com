@@ -4,6 +4,9 @@ pubDate: 2023-01-30
 date: 2023-01-30
 slug: first-post
 description: Journey of my website from plain HTML to Zola to Astro!
+tags:
+  - astro
+  - web dev
 draft: false
 comments: true
 ---
@@ -40,7 +43,7 @@ and building up the website.
 ### Problems I encountered
 
 - A lot of things I wanted to do didn't have extensive docs, and experimenting was required, especially for remark/rehype.
-I couldn't get remark working, so I had to use rehype instead.
+  I couldn't get remark working, so I had to use rehype instead.
 - Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue :thinking:
 
 ## Migration

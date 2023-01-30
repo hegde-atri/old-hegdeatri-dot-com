@@ -36,6 +36,11 @@ body {
   transition: opacity 0.5s ease-in-out;
 }
 
+.toc ol {
+  /* list-style-type: disc; */
+  list-style-type: lower-greek;
+}
+
 .toc:hover {
   opacity: 0.9;
 }

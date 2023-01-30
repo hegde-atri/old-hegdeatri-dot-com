@@ -16,7 +16,7 @@ const styles = Astro.props;
 
 <div class={styles.class}>
   {
-    Links.map((item, _) => {
+    Links.map((item) => {
       return (
         <a href={item.link} aria-label={item.label}>
           <Icon name={item.icon} height="35"/>

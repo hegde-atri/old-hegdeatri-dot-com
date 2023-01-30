@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostList from "../../components/Posts/PostList.astro";
+
+// TODO paginate
+export async function getStaticPaths() {
+    const PAGE_SIZE = 8;
+  let allPosts = await Astro.glob("../../../data/posts/**/*.md*");
+  const posts = allPosts.filter((post) => !post.frontmatter.draft);
+  const allTags = new Set();
+  posts.map((post) => {
+    post.frontmatter.tags && post.frontmatter.tags.map((tag: String) => allTags.add(tag.toLowerCase()));
+  });
+  return Array.from(allTags).map((tag) => {
+    const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: {
+        page: filteredPosts,
+      },
+    };
+  });
+}
+
+const {page} = Astro.props;
+const {tag} = Astro.params;
+let title = `Posts with tag ${tag}`;
+let description = `All posts with tag: ${tag}`
+---
+<Layout title={title} description={description}>
+    <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50">Posts with tag <span class="text-background-600 dark:text-blue-200 italic">{tag}</span></h1>
+    <PostList posts={page} />
+</Layout>
+
+<style>
+  h1:after { 
+  content:"";
+  display: block;
+  align-content: center;
+  background: #ff3d7a;
+  width:215px; 
+  height:4px; 
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #e984a4;
+}
+</style>

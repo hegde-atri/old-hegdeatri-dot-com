@@ -16,9 +16,18 @@ function formatDate(date: Date) {
         >{post.frontmatter.title}</a
       >
     </h3>
-    <blockquote class="flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-700 dark:text-grey-400">
-      <time class="flex items-center" datetime={post.frontmatter.pubDate}><Icon name="ic:baseline-calendar-month" height="25"/><span class="ml-1">{formatDate(post.frontmatter.pubDate)}</span></time>
-      <p class="flex items-center"><Icon name="mdi:alarm-clock" height="24" /><span class="pl-1">{getReadingTime(post.compiledContent())} min read</span></p>
+    <blockquote
+      class="flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-700 dark:text-grey-400"
+    >
+      <time class="flex items-center" datetime={post.frontmatter.pubDate}
+        ><Icon name="ic:baseline-calendar-month" height="25" /><span class="ml-1"
+          >{formatDate(post.frontmatter.pubDate)}</span
+        ></time
+      >
+      <p class="flex items-center">
+        <Icon name="mdi:alarm-clock" height="24" /><span class="pl-1"
+          >{getReadingTime(post.compiledContent())} min read</span>
+      </p>
     </blockquote>
   </div>
   <p class="text-background dark:text-grey-200 m-1 p-1">
@@ -61,7 +70,8 @@ function formatDate(date: Date) {
   }
 
   :global(.dark) a::before {
-    background: #1a7984;
+    background: #34d9dc;
+    box-shadow: 0px 0px 5px #adf4f3;
   }
 
   a:hover::before {
