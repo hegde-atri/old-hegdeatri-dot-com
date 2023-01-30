@@ -1,9 +1,16 @@
 ---
-
+import { Icon } from "astro-icon";
 ---
 
-<footer>Footer</footer>
+<footer
+  class="flex absolute bottom-0 items-center left-0 right-0 ml-auto mr-auto h-16 justify-between bg-background-500 dark:bg-background-light p-3 rounded-t-lg mx-auto sm:w-8/12 md:w-1/2"
+>
+  <p class="mx-auto items-center flex">
+    Made with 
+    <Icon class="px-1" name="mdi:cards-heart" height="25" width="25"/>
+    and Astro 
+    <Icon class="pl-1" name="simple-icons:astro" height="25" width="25"/>
+  </p>
+</footer>
 
-<style>
-  
-</style>
+<style></style>
