@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://new.hegdeatri.com',
+  site: 'https://hegdeatri.com',
   markdown: {
     rehypePlugins: [ rehypeToc ],
     // syntaxHighlight: 'prism',
