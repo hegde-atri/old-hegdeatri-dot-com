@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 8;
 
-  let allSnippets = await Astro.glob("../../../data/snippets/**/*.md*");
+  let allSnippets = await Astro.glob("../../content/snippets/**/*.md*");
   const snippets = allSnippets.filter((snippet) => !snippet.frontmatter.draft);
   let allSortedSnippets = snippets.sort(
     (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
@@ -30,7 +30,7 @@ const { page } = Astro.props;
   display: block;
   align-content: center;
   background: #ff3d7a; 
-  width:175px; 
+  width:165px; 
   height:4px; 
   border-radius: 3px;
   box-shadow: 0px 0px 5px #e984a4;

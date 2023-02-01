@@ -4,6 +4,10 @@ The new version of my [old website](https://old.hegdeatri.com).
 
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
+# Migration Check list Astro 1.9.2 >> 2.0.0 !
+
+- [ ] Start using Collections as in [docs](https://docs.astro.build/en/guides/content-collections/#filtering-collection-queries).
+
 ## To-do
 - [X] Initial UI sketch
 - [X] Header/Navbar

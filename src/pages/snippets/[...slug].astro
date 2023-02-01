@@ -2,7 +2,7 @@
 import SnippetLayout from "../../layouts/SnippetLayout.astro";
 
 export async function getStaticPaths() {
-  let posts = await Astro.glob("../../../data/snippets/**/*.md*");
+  let posts = await Astro.glob("../../content/snippets/**/*.md*");
   const snippets = posts.filter((snippet) => !snippet.frontmatter.draft);
   return snippets.map((snippet) => {
     return {

@@ -9,7 +9,6 @@ export const OPEN_GRAPH = {
 		src: 'https://github.com/hegde-atri',
 		alt: 'Banner',
 	},
-	twitter: 'astrodotbuild',
 };
 
 export const KNOWN_LANGUAGES = {

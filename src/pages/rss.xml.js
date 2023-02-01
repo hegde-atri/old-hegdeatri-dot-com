@@ -1,17 +1,19 @@
 import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content'
 
-export const get = () => rss({
-  // `<title>` field in output xml
-  title: 'Atri’ Posts',
-  // `<description>` field in output xml
-  description: 'Your favourite informative blog :))',
-  // base URL for RSS <item> links
-  // SITE will use "site" from your project's astro.config.
-  site: import.meta.env.SITE,
-  // list of `<item>`s in output xml
-  // simple example: generate items for every md file in /src/pages
-  // see "Generating items" section for required frontmatter and advanced use cases
-  items: import.meta.glob('./**/*.md'),
-  // (optional) inject custom xml
-  customData: `<language>en-us</language>`,
-});
+export async function get(context) {
+    const posts = await getCollection('posts');
+    return rss({
+      title: 'Atri’s posts',
+      description: 'Another amazing rss feed',
+      site: context.site,
+      items: posts.map((post) => ({
+        title: post.data.title,
+        pubDate: post.data.pubDate,
+        description: post.data.description,
+        // Compute RSS link from post `slug`
+        // This example assumes all posts are rendered as `/blog/[slug]` routes
+        link: `/posts/${post.slug}/`,
+      })),
+    });
+  }

@@ -4,7 +4,7 @@ import { Icon } from "astro-icon";
 import { getReadingTime } from "../../lib/readingTime";
 
 export async function getStaticPaths() {
-  let allPosts = await Astro.glob("../../../data/posts/**/*.md*");
+  let allPosts = await Astro.glob("../../content/posts/**/*.md*");
   const posts = allPosts.filter((post) => !post.frontmatter.draft);
   return posts.map((post) => {
     return {

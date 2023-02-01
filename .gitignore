@@ -2,6 +2,9 @@
 dist/
 .output/
 
+# temp files
+.astro
+
 # dependencies
 node_modules/
 
