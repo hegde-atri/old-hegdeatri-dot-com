@@ -13,7 +13,7 @@ comments: true
 
 About 10 months ago, I made my first website. This was just plain HTML and CSS, but I quickly
 moved onto a static site generator called [zola](https://www.getzola.org). I used a prebuilt theme
-and called it a day. You can still visit it [here](old.hegdeatri.com). As I got deeper and deeper into programming and learning linux and self-hosting,
+and called it a day. You can still visit it [here](https://old.hegdeatri.com). As I got deeper and deeper into programming and learning linux and self-hosting,
 I wasn't content with someone else's theme. I wanted to make my own theme.
 
 ## Choosing the framework
