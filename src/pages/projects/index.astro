@@ -5,11 +5,42 @@ const keywords = "";
 ---
 
 <Layout title="Projects" description={description} keywords={keywords}>
-  <p class="text-3xl">🚧 This page is still under construction 🚧</p>
-  <h1>Projects</h1>
+  <p class="text-3xl text-center -mb-96">🚧 This page is still under construction 🚧</p>
+  <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50">Projects</h1>
   <!-- TODO -->
-  <div class="">
+  <div class="right">
+    <img />
+    <h2 class="project-title">
+      <a href="/projects/banking-application">Banking Application</a>
+    </h2>
+    <p>A-level Non-Exam Assessment Project</p>
+    <!-- Skill/tech div? -->
+    <div></div>
+  </div>
+  <div class="left">
     <img />
     <h2 class="project-title"><a href="/projects/rgit">rgit</a></h2>
   </div>
+  <div class="right">
+    <img />
+    <h2 class="project-title"><a href="/projects/arch-wiki">Arch-Wiki</a></h2>
+    <p>
+      Arch-Linux wiki, introduction to desktop linux using Arch Linux for
+      beginners.
+    </p>
+    <!-- Skill/tech div? -->
+    <div></div>
+  </div>
 </Layout>
+<style>
+  h1:after {
+    content: "";
+    display: block;
+    align-content: center;
+    background: #ff3d7a;
+    width: 115px;
+    height: 4px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #e984a4;
+  }
+</style>

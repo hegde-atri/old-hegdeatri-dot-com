@@ -9,26 +9,28 @@ The new version of my [old website](https://old.hegdeatri.com).
 - [ ] Start using Collections as in [docs](https://docs.astro.build/en/guides/content-collections/#filtering-collection-queries).
 
 ## To-do
-- [X] Initial UI sketch
-- [X] Header/Navbar
-    - [ ] Mobile friendly navbar
-- [X] Landing Page
-- [X] About Page
-- [X] Posts page, and Post List
-- [X] Add comment sections to posts
+
+- [x] Initial UI sketch
+- [x] Header/Navbar
+  - [ ] Mobile friendly navbar
+- [x] Landing Page
+- [x] About Page
+- [x] Posts page, and Post List
+- [x] Add comment sections to posts
 - [ ] Projects page, and Projects List
-- [X] Add code snippets page
-- [X] Themes
-- [X] Create tags/categories page
-- [X] Add TOC to posts/projects
+- [x] Add code snippets page
+- [x] Themes
+- [x] Create tags/categories page
+- [x] Add TOC to posts/projects
 - [ ] Legal page
-- [X] Make the First Post!
+- [x] Make the First Post!
 - [ ] Add search functionality
-- [X] MDX Integration
-- [X] Sitemap, RSS
+- [x] MDX Integration
+- [x] Sitemap, RSS
 
 ## Ideas
-- Home page, load maybe some sort of minimal background design, 
-and all the other text sort of fades in.
+
+- Home page, load maybe some sort of minimal background design,
+  and all the other text sort of fades in.
 - Locomotive scroll on some pages.
 - Opposite corners border on post card, and on hover, complete border around post

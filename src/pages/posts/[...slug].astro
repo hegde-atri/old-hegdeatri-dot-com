@@ -22,7 +22,7 @@ const { Content, frontmatter, compiledContent } = Astro.props;
 const title = frontmatter.title;
 const description = frontmatter.description ?? "A post about " + title;
 const image = frontmatter.image;
-const keywords = frontmatter.tags;
+const keywords = frontmatter.keywords;
 const comments = frontmatter.comments ?? true;
 ---
 

@@ -14,9 +14,11 @@ export async function getStaticPaths() {
 
 const { Content, frontmatter } = Astro.props;
 const title = frontmatter.title;
-const description = frontmatter.description || "A code snippet about " + title;
+const description = frontmatter.description ?? "A code snippet about " + title;
+const keywords = frontmatter.keywords;
+const comments = frontmatter.comments ?? true;
 ---
 
-<SnippetLayout title={title} description={description}>
+<SnippetLayout title={title} description={description} keywords={keywords} comments={comments}>
   <Content />
 </SnippetLayout>
