@@ -17,7 +17,10 @@ const Skills = [
   { logo: "skill-icons:git", link: "https://git-scm.com/" },
   { logo: "skill-icons:postgresql-dark", link: "https://www.postgresql.org/" },
   { logo: "skill-icons:dotnet", link: "https://dotnet.microsoft.com/" },
-  { logo: "skill-icons:cs", link: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+  {
+    logo: "skill-icons:cs",
+    link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  },
   { logo: "skill-icons:java-dark", link: "https://www.java.com/en/" },
   { logo: "skill-icons:golang", link: "https://go.dev/" },
   { logo: "skill-icons:rust", link: "https://www.rust-lang.org/" },
@@ -83,27 +86,31 @@ const Frameworks = [
     </nav>
     <h1 id="about-me">About me</h1>
     <p>
-      I am Atri Hegde, currently a first year at the University of Sheffield, studying MEng Software Engineering
-      (Computer Science) [2022-2026].
+      I am Atri Hegde, currently a first year at the University of Sheffield,
+      studying MEng Software Engineering (Computer Science) [2022-2026].
     </p>
     <h2 id="skills">Skills</h2>
-    <p>Here are some of the technologies and programming languages I have worked with.</p>
-      {
-        Skills.map((item, _) => {
-          return (
-            <a href={item.link} class="no-underline mb-2">
-              <iconify-icon icon={item.logo} width="50" />
-            </a>
-          );
-        })
-      }
-      <p>
-        You can check out my projects <a href="/projects">here</a>.
-      </p>
+    <p>
+      Here are some of the technologies and programming languages I have worked
+      with.
+    </p>
+    {
+      Skills.map((item, _) => {
+        return (
+          <a href={item.link} class="no-underline mb-2">
+            <iconify-icon icon={item.logo} width="50" />
+          </a>
+        );
+      })
+    }
+    <p>
+      You can check out my projects <a href="/projects">here</a>.
+    </p>
     <h2 id="interests">Interests</h2>
     <p>
-      I am very interested and passionate about Open Source Software! I try to use FOSS alternatives wherever possible.
-      Tinkering with servers became my hobby as I self hosted all my services on a Raspberry Pi 4.
+      I am very interested and passionate about Open Source Software! I try to
+      use FOSS alternatives wherever possible. Tinkering with servers became my
+      hobby as I self hosted all my services on a Raspberry Pi 4.
     </p>
     <!-- <h2 id="work-experience">Work Experience</h2> -->
     <h2 id="resume">Resume</h2>
@@ -112,9 +119,25 @@ const Frameworks = [
     <div class="my-10">
       <Socials class="flex space-x-5" />
     </div>
-    <!-- TODO <h1>About you ... ?</h1> -->
+    <h1>About you ... ?</h1>
   </div>
+  <script>
+    // Getting info about you 👀
+    // TODO: by pass cors for only this request?
+    var endpoint = "http://ip-api.com/json";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+      }
+      console.log();
+    };
+    xhr.open("GET", endpoint, true);
+    xhr.send();
+  </script>
 
-  <script is:inline src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+  <script
+    is:inline
+    src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
+  ></script>
 </Layout>
 <style></style>
