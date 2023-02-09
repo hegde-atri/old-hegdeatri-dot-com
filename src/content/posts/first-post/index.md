@@ -5,8 +5,8 @@ date: 2023-01-30
 slug: first-post
 description: Journey of my website from plain HTML to Zola to Astro!
 tags:
-  - astro
-  - web dev
+    - astro
+    - web dev
 draft: false
 comments: true
 ---
@@ -42,15 +42,15 @@ and building up the website.
 
 ### Problems I encountered
 
-- A lot of things I wanted to do didn't have extensive docs, and experimenting was required, especially for remark/rehype.
-  I couldn't get remark working, so I had to use rehype instead.
-- Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue 🤔.
-- This website is almost javascript free apart from the Theme switcher, [comments](https://github.com/utterance/utterances)
-(Under MIT License) and [Icons](https://github.com/iconify/iconify)(Under MIT License). This means that you can easily browse
-most of my website without loading any javascript!!
-- Mobile friendly, I not motivated to making a mobile first approach. That being said my website is still 100% usuable on a
-mobile phone, except from the navbar which is hard to use, but will be updated to be 100% usable in the near future.
-- The urge to create eye-candy javascript bloated animations/effects but I wanted my site to be clean and minimal.
+-   A lot of things I wanted to do didn't have extensive docs, and experimenting was required, especially for remark/rehype.
+    I couldn't get remark working, so I had to use rehype instead.
+-   Page sometimes flashes theme when route not hydrated. I could not seem to solve this issue 🤔.
+-   This website is almost javascript free apart from the Theme switcher, [comments](https://github.com/utterance/utterances)
+    (Under MIT License) and [Icons](https://github.com/iconify/iconify)(Under MIT License). This means that you can easily browse
+    most of my website without loading any javascript!!
+-   Mobile friendly, I not motivated to making a mobile first approach. That being said my website is still 100% usuable on a
+    mobile phone, except from the navbar which is hard to use, but will be updated to be 100% usable in the near future.
+-   The urge to create eye-candy javascript bloated animations/effects but I wanted my site to be clean and minimal.
 
 ## Migration
 

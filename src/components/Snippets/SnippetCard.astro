@@ -12,11 +12,11 @@ function formatDate(date: Date) {
         >{post.frontmatter.title}</a
       >
     </h3>
-    <blockquote class="border-l-4 border-l-foreground-500 pl-2 text-grey-400">
+    <blockquote class="border-l-4 border-l-foreground-500 pl-2 text-background dark:text-grey-400">
       <time class="" datetime={post.frontmatter.pubDate}>{formatDate(post.frontmatter.pubDate)}</time>
     </blockquote>
   </div>
-  <p class="text-grey-200 m-1 p-1">
+  <p class="text-background dark:text-grey-200 m-1 p-1">
     {post.frontmatter.description || "A snippet about " + post.frontmatter.title}
   </p>
 </article>
