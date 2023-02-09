@@ -1,7 +1,7 @@
 ---
 title: Migrating from my old site!
 pubDate: 2023-01-30
-date: 2023-01-30
+date: 2023-02-02
 slug: first-post
 description: Journey of my website from plain HTML to Zola to Astro!
 tags:

@@ -4,117 +4,117 @@ import { Icon } from "astro-icon";
 
 const { post } = Astro.props;
 function formatDate(date: Date) {
-  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1");
+    return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1");
 }
 ---
 
 <article class="m-2 p-3 mx-auto w-3/5 flex flex-col mb-8">
-  <div class="flex flex-col">
-    <h3 class="text-2xl font-bold hover-effect p-2 mb-1">
-      <a
-        class="text-background dark:text-foreground-200"
-        href={`/posts/${post.frontmatter.slug}`}>{post.frontmatter.title}</a
-      >
-    </h3>
-    <blockquote
-      class="flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-700 dark:text-grey-400"
-    >
-      <time class="flex items-center" datetime={post.frontmatter.pubDate}
-        ><Icon name="ic:baseline-calendar-month" height="25" /><span
-          class="ml-1">{formatDate(post.frontmatter.pubDate)}</span
-        ></time
-      >
-      <p class="flex items-center">
-        <Icon name="mdi:alarm-clock" height="24" /><span class="pl-1"
-          >{getReadingTime(post.compiledContent())} min read</span
+    <div class="flex flex-col">
+        <h3 class="text-2xl font-bold hover-effect p-2 mb-1">
+            <a
+                class="text-background dark:text-foreground-200"
+                href={`/posts/${post.frontmatter.slug}`}
+                >{post.frontmatter.title}</a
+            >
+        </h3>
+        <blockquote
+            class="flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-700 dark:text-grey-400"
         >
-      </p>
-    </blockquote>
-  </div>
-  <p class="text-background dark:text-grey-200 m-1 p-1">
-    {post.frontmatter.description || "A post about " + post.frontmatter.title}
-  </p>
+            {
+                post.frontmatter.pubDate === post.frontmatter.date ? (
+                    <time
+                        class="flex items-center"
+                        datetime={post.frontmatter.pubDate}
+                    >
+                        <Icon name="ic:baseline-calendar-month" height="25" />
+                        <span class="ml-1">
+                            {formatDate(post.frontmatter.pubDate)}
+                        </span>
+                    </time>
+                ) : (
+                    <span class="flex">
+                        <time
+                            class="flex items-center"
+                            datetime={post.frontmatter.date}
+                        >
+                            <Icon name="ic:outline-update" height="25" />
+                            <span class="ml-1">
+                                {formatDate(post.frontmatter.date)}
+                            </span>
+                        </time>
+                        <time
+                            class="flex items-center pl-5"
+                            datetime={post.frontmatter.pubDate}
+                        >
+                            <Icon
+                                name="ic:baseline-calendar-month"
+                                height="25"
+                            />
+                            <span class="ml-1">
+                                {formatDate(post.frontmatter.pubDate)}
+                            </span>
+                        </time>
+                    </span>
+                )
+            }
+
+            <p class="flex items-center">
+                <Icon name="mdi:alarm-clock" height="24" /><span class="pl-1"
+                    >{getReadingTime(post.compiledContent())} min read</span
+                >
+            </p>
+        </blockquote>
+    </div>
+    <p class="text-background dark:text-grey-200 m-1 p-1">
+        {
+            post.frontmatter.description ||
+                "A post about " + post.frontmatter.title
+        }
+    </p>
 </article>
 <style>
-  article {
-    transition: 500ms;
-    border-radius: 8px;
-    opacity: 0.85;
-    transition: opacity 0.3s ease-out;
-  }
-
-  article:hover {
-    opacity: 1;
-  }
-
-  /* Underline effect title */
-  a {
-    color: #18272f;
-    position: relative;
-    text-decoration: none;
-    box-shadow: 0 0 1px transparent;
-  }
-
-  a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-    background: #445285;
-    box-shadow: 0px 0px 5px #19bdc1;
-  }
-
-  :global(.dark) a::before {
-    background: #34d9dc;
-    box-shadow: 0px 0px 5px #adf4f3;
-  }
-
-  a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
-  .card {
-    cursor: pointer;
-    position: relative;
-    padding: 10px 20px;
-    /* border-top-right-radius: 10px; */
-    /* border-bottom-left-radius: 10px; */
-    transition: all 0.5s;
-    &:after,
-    &:before {
-      content: " ";
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      border: 0px solid #000;
-      transition: all 1s;
+    article {
+        transition: 500ms;
+        border-radius: 8px;
+        opacity: 0.85;
+        transition: opacity 0.3s ease-out;
     }
-    &:after {
-      top: -1px;
-      left: -1px;
-      border-top: 5px solid #19bdc1;
-      border-left: 5px solid #19bdc1;
+
+    article:hover {
+        opacity: 1;
     }
-    &:before {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 5px solid #34d9dc;
-      border-right: 5px solid #34d9dc;
+
+    /* Underline effect title */
+    a {
+        color: #18272f;
+        position: relative;
+        text-decoration: none;
+        box-shadow: 0 0 1px transparent;
     }
-    &:hover {
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      &:before,
-      &:after {
+
+    a::before {
+        content: "";
+        position: absolute;
         width: 100%;
-        height: 100%;
-      }
+        height: 4px;
+        border-radius: 4px;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        background: #445285;
+        box-shadow: 0px 0px 5px #19bdc1;
     }
-  }
+
+    :global(.dark) a::before {
+        background: #34d9dc;
+        box-shadow: 0px 0px 5px #adf4f3;
+    }
+
+    a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    
 </style>

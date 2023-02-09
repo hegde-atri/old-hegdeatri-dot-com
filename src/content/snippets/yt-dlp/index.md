@@ -4,7 +4,7 @@ description: Usefull yt-dlp commands for saving mp4 and mp3 files.
 pubDate: 2023-02-07
 date: 2023-02-09
 slug: yt-dlp
-keywords:
+tags:
   - yt-dlp
   - alias
 ---
