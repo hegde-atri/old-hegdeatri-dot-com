@@ -8,16 +8,22 @@ import astroRemark from '@astrojs/markdown-remark';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://hegdeatri.com',
   markdown: {
     astroRemark,
-    rehypePlugins: [ rehypeSlug, rehypeAutolinkHeadings, rehypeToc ],
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeToc],
     // syntaxHighlight: 'prism',
     shikiConfig: {
-      theme: 'material-palenight',
+      theme: 'material-palenight'
       // wrap: true,
     }
   },
+
   integrations: [mdx(), sitemap(), tailwind()],
+  output: "server",
+  adapter: vercel()
 });
