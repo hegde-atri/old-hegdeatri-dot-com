@@ -2,6 +2,8 @@
 dist/
 .output/
 
+.vercel/
+
 # temp files
 .astro
 
