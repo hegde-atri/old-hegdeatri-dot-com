@@ -3,6 +3,8 @@ import Pagination from "../../components/Pagination.astro";
 import SnippetList from "../../components/Snippets/SnippetList.astro";
 import Layout from "../../layouts/Layout.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 8;
 

@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import PostList from "../../components/Posts/PostList.astro";
 
+export const prerender = true;
+
 // TODO paginate
 export async function getStaticPaths() {
   const PAGE_SIZE = 8;

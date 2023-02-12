@@ -1,143 +1,153 @@
 ---
 import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon";
-// import "../styles/locomotive.css"
 
 const Skills = [
-  { logo: "skill-icons:latex-dark", link: "https://www.latex-project.org/" },
-  { logo: "skill-icons:emacs", link: "https://www.gnu.org/software/emacs/" },
-  { logo: "skill-icons:neovim-dark", link: "https://neovim.io/" },
-  { logo: "skill-icons:bash-dark", link: "https://www.gnu.org/software/bash/" },
-  { logo: "skill-icons:linux-dark", link: "https://www.kernel.org/" },
-  { logo: "skill-icons:azure-dark", link: "https://azure.microsoft.com/" },
-  { logo: "skill-icons:aws-dark", link: "https://aws.amazon.com/" },
-  { logo: "skill-icons:docker", link: "https://docker.com" },
-  { logo: "skill-icons:nginx", link: "https://www.nginx.com/" },
-  { logo: "skill-icons:git", link: "https://git-scm.com/" },
-  { logo: "skill-icons:postgresql-dark", link: "https://www.postgresql.org/" },
-  { logo: "skill-icons:dotnet", link: "https://dotnet.microsoft.com/" },
-  {
-    logo: "skill-icons:cs",
-    link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-  },
-  { logo: "skill-icons:java-dark", link: "https://www.java.com/en/" },
-  { logo: "skill-icons:golang", link: "https://go.dev/" },
-  { logo: "skill-icons:rust", link: "https://www.rust-lang.org/" },
-  { logo: "skill-icons:python-dark", link: "https://www.python.org/" },
-  { logo: "skill-icons:ruby", link: "https://www.ruby-lang.org/en/" },
-  { logo: "skill-icons:javascript", link: "https://www.javascript.com/" },
-  { logo: "skill-icons:typescript", link: "https://www.typescriptlang.org/" },
-  { logo: "skill-icons:angular-dark", link: "https://angular.io/" },
-  { logo: "skill-icons:astro", link: "https://astro.build/" },
-  { logo: "skill-icons:nextjs-dark", link: "https://nextjs.org/" },
-  { logo: "skill-icons:rails", link: "https://rubyonrails.org/" },
-  { logo: "skill-icons:prisma", link: "https://www.prisma.io/" },
-  { logo: "skill-icons:tailwindcss-dark", link: "https://tailwindcss.com/" },
+    { logo: "skill-icons:latex-dark", link: "https://www.latex-project.org/" },
+    { logo: "skill-icons:emacs", link: "https://www.gnu.org/software/emacs/" },
+    { logo: "skill-icons:neovim-dark", link: "https://neovim.io/" },
+    {
+        logo: "skill-icons:bash-dark",
+        link: "https://www.gnu.org/software/bash/",
+    },
+    { logo: "skill-icons:linux-dark", link: "https://www.kernel.org/" },
+    { logo: "skill-icons:azure-dark", link: "https://azure.microsoft.com/" },
+    { logo: "skill-icons:aws-dark", link: "https://aws.amazon.com/" },
+    { logo: "skill-icons:docker", link: "https://docker.com" },
+    { logo: "skill-icons:nginx", link: "https://www.nginx.com/" },
+    { logo: "skill-icons:git", link: "https://git-scm.com/" },
+    {
+        logo: "skill-icons:postgresql-dark",
+        link: "https://www.postgresql.org/",
+    },
+    { logo: "skill-icons:dotnet", link: "https://dotnet.microsoft.com/" },
+    {
+        logo: "skill-icons:cs",
+        link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    },
+    { logo: "skill-icons:java-dark", link: "https://www.java.com/en/" },
+    { logo: "skill-icons:golang", link: "https://go.dev/" },
+    { logo: "skill-icons:rust", link: "https://www.rust-lang.org/" },
+    { logo: "skill-icons:python-dark", link: "https://www.python.org/" },
+    { logo: "skill-icons:ruby", link: "https://www.ruby-lang.org/en/" },
+    { logo: "skill-icons:javascript", link: "https://www.javascript.com/" },
+    { logo: "skill-icons:typescript", link: "https://www.typescriptlang.org/" },
+    { logo: "skill-icons:angular-dark", link: "https://angular.io/" },
+    { logo: "skill-icons:astro", link: "https://astro.build/" },
+    { logo: "skill-icons:nextjs-dark", link: "https://nextjs.org/" },
+    { logo: "skill-icons:rails", link: "https://rubyonrails.org/" },
+    { logo: "skill-icons:prisma", link: "https://www.prisma.io/" },
+    { logo: "skill-icons:tailwindcss-dark", link: "https://tailwindcss.com/" },
 ];
 
 const Best = [
-  { logo: "", link: "" },
-  { logo: "", link: "" },
+    { logo: "", link: "" },
+    { logo: "", link: "" },
 ];
 const Better = [
-  { logo: "", link: "" },
-  { logo: "", link: "" },
+    { logo: "", link: "" },
+    { logo: "", link: "" },
 ];
 const Good = [
-  { logo: "", link: "" },
-  { logo: "", link: "" },
+    { logo: "", link: "" },
+    { logo: "", link: "" },
 ];
 
 const Tools = [
-  { logo: "", link: "" },
-  { logo: "", link: "" },
+    { logo: "", link: "" },
+    { logo: "", link: "" },
 ];
 
 const Frameworks = [
-  { logo: "", link: "" },
-  { logo: "", link: "" },
+    { logo: "", link: "" },
+    { logo: "", link: "" },
 ];
 ---
 
 <Layout title="About Atri Hegde">
-  <div class="prose dark:prose-invert mx-auto mt-5 scroll-auto">
-    <nav class="toc">
-      <ol class="toc-level toc-level-1">
-        <li class="toc-item toc-item-h1">
-          <a class="toc-link toc-link-h1" href="#about-me">About me</a>
-        </li>
-        <li class="toc-item toc-item-h1">
-          <a class="toc-link toc-link-h1" href="#skills">Skills</a>
-        </li>
-        <li class="toc-item toc-item-h1">
-          <a class="toc-link toc-link-h1" href="#interests">Interests</a>
-        </li>
-        <!-- <li class="toc-item toc-item-h1">
+    <div class="prose dark:prose-invert mx-auto mt-5 scroll-auto">
+        <nav class="toc">
+            <ol class="toc-level toc-level-1">
+                <li class="toc-item toc-item-h1">
+                    <a class="toc-link toc-link-h1" href="#about-me">About me</a
+                    >
+                </li>
+                <li class="toc-item toc-item-h1">
+                    <a class="toc-link toc-link-h1" href="#skills">Skills</a>
+                </li>
+                <li class="toc-item toc-item-h1">
+                    <a class="toc-link toc-link-h1" href="#interests"
+                        >Interests</a
+                    >
+                </li>
+                <!-- <li class="toc-item toc-item-h1">
           <a class="toc-link toc-link-h1" href="#work-experience">Work Experience</a>
         </li> -->
-        <li class="toc-item toc-item-h1">
-          <a class="toc-link toc-link-h1" href="#resume">Resume</a>
-        </li>
-        <li class="toc-item toc-item-h1">
-          <a class="toc-link toc-link-h1" href="#reach-me">Reach me</a>
-        </li>
-      </ol>
-    </nav>
-    <h1 id="about-me">About me</h1>
-    <p>
-      I am Atri Hegde, currently a first year at the University of Sheffield,
-      studying MEng Software Engineering (Computer Science) [2022-2026].
-    </p>
-    <h2 id="skills">Skills</h2>
-    <p>
-      Here are some of the technologies and programming languages I have worked
-      with.
-    </p>
-    {
-      Skills.map((item, _) => {
-        return (
-          <a href={item.link} class="no-underline mb-2">
-            <iconify-icon icon={item.logo} width="50" />
-          </a>
-        );
-      })
-    }
-    <p>
-      You can check out my projects <a href="/projects">here</a>.
-    </p>
-    <h2 id="interests">Interests</h2>
-    <p>
-      I am very interested and passionate about Open Source Software! I try to
-      use FOSS alternatives wherever possible. Tinkering with servers became my
-      hobby as I self hosted all my services on a Raspberry Pi 4.
-    </p>
-    <!-- <h2 id="work-experience">Work Experience</h2> -->
-    <h2 id="resume">Resume</h2>
-    <p>Resume attached <a href="/assets/resume.pdf">here</a>.</p>
-    <h2 id="reach-me">Reach me</h2>
-    <div class="my-10">
-      <Socials class="flex space-x-5" />
+                <li class="toc-item toc-item-h1">
+                    <a class="toc-link toc-link-h1" href="#resume">Resume</a>
+                </li>
+                <li class="toc-item toc-item-h1">
+                    <a class="toc-link toc-link-h1" href="#reach-me">Reach me</a
+                    >
+                </li>
+            </ol>
+        </nav>
+        <h1 id="about-me">About me</h1>
+        <p>
+            I am Atri Hegde, currently a first year at the University of
+            Sheffield, studying MEng Software Engineering (Computer Science)
+            [2022-2026].
+        </p>
+        <h2 id="skills">Skills</h2>
+        <p>
+            Here are some of the technologies and programming languages I have
+            worked with.
+        </p>
+        {
+            Skills.map((item, _) => {
+                return (
+                    <a href={item.link} class="no-underline mb-2">
+                        <iconify-icon icon={item.logo} width="50" />
+                    </a>
+                );
+            })
+        }
+        <p>
+            You can check out my projects <a href="/projects">here</a>.
+        </p>
+        <h2 id="interests">Interests</h2>
+        <p>
+            I am very interested and passionate about Open Source Software! I
+            try to use FOSS alternatives wherever possible. Tinkering with
+            servers became my hobby as I self hosted all my services on a
+            Raspberry Pi 4.
+        </p>
+        <!-- <h2 id="work-experience">Work Experience</h2> -->
+        <h2 id="resume">Resume</h2>
+        <p>Resume attached <a href="/assets/resume.pdf">here</a>.</p>
+        <h2 id="reach-me">Reach me</h2>
+        <div class="my-10">
+            <Socials class="flex space-x-5" />
+        </div>
+        <h1>About you ... ?</h1>
     </div>
-    <h1>About you ... ?</h1>
-  </div>
-  <script>
-    // Getting info about you 👀
-    // TODO: by pass cors for only this request?
-    var endpoint = "http://ip-api.com/json";
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-      }
-      console.log();
-    };
-    xhr.open("GET", endpoint, true);
-    xhr.send();
-  </script>
+    <script>
+        // Getting info about you 👀
+        // TODO: by pass cors for only this request?
+        //   var endpoint = "http://ip-api.com/json";
+        //   var xhr = new XMLHttpRequest();
+        //   xhr.onreadystatechange = function () {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //     }
+        //     console.log();
+        //   };
+        //   xhr.open("GET", endpoint, true);
+        //   xhr.send();
+    </script>
 
-  <script
-    is:inline
-    src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
-  ></script>
+    <script
+        is:inline
+        src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
+    ></script>
 </Layout>
 <style></style>

@@ -2,6 +2,8 @@
 import SnippetLayout from "../../layouts/SnippetLayout.astro";
 import { Icon } from "astro-icon";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   let posts = await Astro.glob("../../content/snippets/**/*.md*");
   const snippets = posts.filter((snippet) => !snippet.frontmatter.draft);
