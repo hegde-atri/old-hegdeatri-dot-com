@@ -11,6 +11,21 @@ body {
   transition: 300ms;
 }
 
+code {
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+  background: #252a40;
+}
+
+code::before {
+  content: "" !important;
+}
+code::after {
+  content: "" !important;
+}
+
 .dark html {
   background: #0f111a;
   color: #dfebff;
@@ -63,7 +78,7 @@ body {
   color: #0f111a;
   text-decoration: none;
 }
-.dark .toc-link:hover{
+.dark .toc-link:hover {
   color: #d3faf9;
 }
 
@@ -71,7 +86,7 @@ body {
   transition: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-  color: #252A40;
+  color: #252a40;
 }
 .dark [astro-icon] {
   color: #b1cbff;
