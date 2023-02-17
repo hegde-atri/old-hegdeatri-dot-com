@@ -1,7 +1,7 @@
 ---
 title: Migrating from my old site!
 pubDate: 2023-01-30
-date: 2023-02-02
+date: 2023-02-17
 slug: first-post
 description: Journey of my website from plain HTML to Zola to Astro!
 tags:
@@ -52,6 +52,13 @@ and building up the website.
   mobile phone, except from the navbar which is hard to use, but will be updated to be 100% usable in the near future.
 - The urge to create eye-candy javascript bloated animations/effects but I wanted my site to be clean and minimal.
 
+### Mobile design
+
+For now I am just trying to get everything working on desktop. The mobile version of this website will be an afterthought.
+However I aim to make the website completely usuable, altough it might lack some features (such as the toc table on posts).
+I plan to remove all the bloat on mobile phones using media queries (useless icons won't be eating up the space), getting
+rid of this bloat, and a bunch of margins/paddings, will make an easy port to mobile devices.
+
 ## Migration
 
 Although I could copy the markdown files of my posts to this site without affecting the links, I felt
@@ -62,6 +69,7 @@ few articles for the new website.
 ## Conclusion
 
 1 month later, and here we are! I think the website looks beautiful, although I wouldn't recommend turning
-on light mode 😅. There are still a few features missing, like search and the projects page.
+on light mode 😅. There are still a few features missing, like search and the projects page. There are a few easter eggs such as
+being able to activate the hidden light mode 😲, try and find them!
 
 Overall I think Astro is a really cool framework and I'll definitely be using it for upcoming projects.
