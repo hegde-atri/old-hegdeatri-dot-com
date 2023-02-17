@@ -47,44 +47,35 @@ const keywords = "";
 ---
 
 <Layout title="Projects" description={description} keywords={keywords}>
-        <h1
-            class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-[#ff3d7a] shadow-md"
-        >
-            Projects
-        </h1>
-    {
-        PROJECTS.map((project, _) => {
-            return (
-                <div class="p-3 my-5">
-                    <div class="flex flex-col">
-                        <img src={project.image} />
-                        <div class="flex flex-col text-center">
-                            <h2 class="project-title text-3xl font-semibold">
-                                <a href={project.link}>{project.name}</a>
-                            </h2>
-                            <p class="text-gray-400 font-bold">
-                                {project.date}
-                            </p>
+    <div>
+        {
+            PROJECTS.map((project, _) => {
+                return (
+                    <div class="p-3 my-5 space-y-2 project-card">
+                        <div class="flex flex-col">
+                            <img src={project.image} />
+                            <div class="flex flex-col text-center space-y-1">
+                                <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
+                                    <a href={project.link}>{project.name}</a>
+                                </h1>
+                                <p class="text-gray-400 font-bold">
+                                    {project.date}
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-center">{project.description}</p>
+                            <h3 class="text-center text-gray-400">
+                                {project.skills}
+                            </h3>
                         </div>
                     </div>
-                    <div>
-                        <p class="text-center">{project.description}</p>
-                        <h3 class="text-center text-gray-400">
-                            {project.skills}
-                        </h3>
-                    </div>
-                </div>
-            );
-        })
-    }
+                );
+            })
+        }
+    </div>
 </Layout>
 <style>
-    h1 {
-        color : #ff3d7a;
-        text-decoration: underline;
-        box-shadow: 0px 0px 0px #e984a4;
-    }
-
     @keyframes lights {
         0% {
             color: hsl(230, 40%, 80%);
@@ -129,5 +120,47 @@ const keywords = "";
 
     .project-title {
         animation: lights 5s 750ms linear infinite;
+    }
+
+    /* a {
+        position: relative;
+        text-decoration: none;
+        box-shadow: 0 0 1px transparent;
+    }
+
+    a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        background: #445285;
+        box-shadow: 0px 0px 5px #19bdc1;
+    }
+
+    :global(.dark) a::before {
+        background: #0040a6;
+        box-shadow: 0px 0px 5px #9475e1;
+    }
+
+    a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    } */
+
+    .project-card {
+        transition: 500ms;
+        border-radius: 8px;
+        opacity: 0.85;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .project-card:hover {
+        opacity: 1;
     }
 </style>
