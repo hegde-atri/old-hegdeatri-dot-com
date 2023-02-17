@@ -4,54 +4,85 @@ import Layout from "../../layouts/Layout.astro";
 export const prerender = true;
 
 const PROJECTS = [
-  {name: "Banking Application", image: "", date: "March 2022", description: "", skills: "", link: "/projects/banking-application"},
-  {name: "Arch-Wiki", image: "", date: "January 2023", description: "", skills: "", link: "/projects/arch-wiki"},
-  {name: "rgit", image: "", date: "March 2022", description: "", skills: "", link: "/projects/rgit"},
-  {name: "Rust Projects", image: "", date: "March 2022", description: "", skills: "", link: "/projects/rust"},
-]
+    {
+        name: "Banking Application",
+        link: "https://hegdeatri.com/projects/banking-application",
+        image: "",
+        date: "March 2022",
+        description: "This is a short description",
+        skills: "C#, Angular, MSSQL",
+        page: "/projects/banking-application",
+    },
+    {
+        name: "Arch-Wiki",
+        link: "https://arch-wiki.hegdeatri.com",
+        image: "",
+        date: "January 2023",
+        description: "",
+        skills: "",
+        page: "/projects/arch-wiki",
+    },
+    {
+        name: "rgit",
+        link: "https://hegdeatri.com/projects/rgit",
+        image: "",
+        date: "March 2022",
+        description: "",
+        skills: "",
+        page: "/projects/rgit",
+    },
+    {
+        name: "Rust Projects",
+        link: "https://github.com/hegde-atri/rust_projects",
+        image: "",
+        date: "March 2022",
+        description: "",
+        skills: "",
+        page: "/projects/rust",
+    },
+];
 
 const description = "Atri Hegde's notable projects";
 const keywords = "";
 ---
 
 <Layout title="Projects" description={description} keywords={keywords}>
-    <p class="text-3xl text-center">
-        🚧 This page is still under construction 🚧
-    </p>
-    <h1
-        class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50"
-    >
-        Projects
-    </h1>
-    <!-- TODO -->
+        <h1
+            class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-[#ff3d7a] shadow-md"
+        >
+            Projects
+        </h1>
     {
-      PROJECTS.map((project, _) => {
-        return (
-          <div>
-            <div>
-              <img src={project.image}/>
-              <h2 class="project-title text-3xl font-semibold"><a href={project.link}>{project.name}</a></h2>
-              <p>{project.date}</p>
-            </div>
-            <div>
-              <p>{project.description}</p>
-              <h3>{project.skills}</h3>
-            </div>
-          </div>
-        )
-      })
+        PROJECTS.map((project, _) => {
+            return (
+                <div class="p-3 my-5">
+                    <div class="flex flex-col">
+                        <img src={project.image} />
+                        <div class="flex flex-col text-center">
+                            <h2 class="project-title text-3xl font-semibold">
+                                <a href={project.link}>{project.name}</a>
+                            </h2>
+                            <p class="text-gray-400 font-bold">
+                                {project.date}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center">{project.description}</p>
+                        <h3 class="text-center text-gray-400">
+                            {project.skills}
+                        </h3>
+                    </div>
+                </div>
+            );
+        })
     }
 </Layout>
 <style>
-    h1:after {
-        content: "";
-        display: block;
-        align-content: center;
-        background: #ff3d7a;
-        width: 115px;
-        height: 4px;
-        border-radius: 3px;
-        box-shadow: 0px 0px 5px #e984a4;
+    h1 {
+        color : #ff3d7a;
+        text-decoration: underline;
+        box-shadow: 0px 0px 0px #e984a4;
     }
 
     @keyframes lights {
