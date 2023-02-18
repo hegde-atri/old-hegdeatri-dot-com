@@ -2,14 +2,53 @@
 
 This project was chosen as my Non Exam Assessment coursework for Computer Science (2021-2022) A-level. Although the project isn't as polished as it can be,
 the quality of code written has improved significantly towards the end of the project. Due to deadlines of the project, colour scheme and design language
-is not 100% consistent nor is it meant to be. This is my first "from scratch" website, working with Angular and .NET. Therefore this is almost as a big 
+is not 100% consistent nor is it meant to be. This is my first website to
+authentication(using Azure AAD), working with Angular and .NET. Therefore this is almost as a big 
 reference project I will build upon in other projects.
+
+Unfortunately, there is no live demo for this website, as everything was hosted
+on Microsoft Azure (with Log Analytics) and it was not worth keeping it up.
+
+## Objectives
+
+Before we started coding our project idea, we had to do some
+planning and set ourselves some goals. Listed below, are my goals. 
+My planning pdf with various diagrams can be seen [here](/assets/projects/banking-application/diagrams.pdf).
+
+### User
+
+- User will be able to login using his credentials.
+- User entered email should be verified with a confirmation email.
+- User should be able to change their password (Azure B2C).
+- User should be able to setup 2 Factor Authentication (2FA).
+- Support user management using Azure Active Directories.
+- Use authentication standard of OpenID / OAuth
+- Customers logged in should have a persistent access to the navbar.
+- Edit details of existing payee.
+- View transaction history
+- Filter transaction history
+- Search transaction history
+- Personal details can be viewed censored, so that it can be viewed in libraries or any other public places.
+- View when their details was last changed, and by whom it was changed.
+
+### Teller
+
+- Deposit/Withdraw money using account number.
+
+### Officer
+
+- Create customer account.
+- View transaction history of customer.
+- View accounts table.
+
+### Manager
+
+- Should be able to create Teller and Branch officer accounts.
+- View all users registered - customers, tellers and branch officers.
 
 ## Banking Application - [front end](https://github.com/hegde-atri/BankingApplication-fe)
 
-This project is made using the Angular framework. My planning pdf with various diagrams can be seen [here](/assets/projects/banking-application/diagrams.pdf).
-
-For the theming and design of the website, I decided to try using Angular material which looked professional and seemed
+This project is made using the Angular framework. For the theming and design of the website, I decided to try using Angular material which looked professional and seemed
 to have all the components I needed. I have also implemented graphs and steppers in reactive forms. The forms also 
 feature validation and validation hints. Most buttons also have tooltips.
 
@@ -48,39 +87,3 @@ database schemas and the Migrations folder which EF Core uses to make changes to
 expected it to be. I have used EF Core in conjunction with Microsoft SQL Server.
 
 I have written a trigger for new transaction entries on the database (in the SQL folder).
-
-## Objectives
-
-Before we started coding our project idea, we had to do some
-planning and set ourselves some goals. Listed below, are my goals.
-
-### User
-
-- User will be able to login using his credentials.
-- User entered email should be verified with a confirmation email.
-- User should be able to change their password (Azure B2C).
-- User should be able to setup 2 Factor Authentication (2FA).
-- Support user management using Azure Active Directories.
-- Use authentication standard of OpenID / OAuth
-- Customers logged in should have a persistent access to the navbar.
-- Edit details of existing payee.
-- View transaction history
-- Filter transaction history
-- Search transaction history
-- Personal details can be viewed censored, so that it can be viewed in libraries or any other public places.
-- View when their details was last changed, and by whom it was changed.
-
-### Teller
-
-- Deposit/Withdraw money using account number.
-
-### Officer
-
-- Create customer account.
-- View transaction history of customer.
-- View accounts table.
-
-### Manager
-
-- Should be able to create Teller and Branch officer accounts.
-- View all users registered - customers, tellers and branch officers.

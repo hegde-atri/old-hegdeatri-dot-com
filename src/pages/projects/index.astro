@@ -14,26 +14,59 @@ const PROJECTS = [
     // },
     {
         name: "Rust Projects",
-        image: "",
-        date: "March 2022",
-        description: "",
-        skills: "",
+        date: "March 2022 - Ongoing",
+        description: "A collection of projects written using rust. It is very diverse ranging from a API server connected SurrealDb to a single-channel/multiple-receiver chat application. Read more about in the it's page.",
+        skills: "Rust, Problem Solving, Actix, SurrealDb",
         page: "/projects/rust-projects",
-    },{
+    },
+    {
         name: "Arch-Wiki",
         link: "https://arch-wiki.hegdeatri.com",
-        image: "",
-        date: "January 2023",
-        description: "",
-        skills: "",
+        image: {
+            src: "/assets/projects/arch-wiki.png",
+            height: 1080,
+            width: 1920,
+            scale: 0.5,
+        },
+        date: "March 2022 - Ongoing",
+        description:
+            "A wiki for Arch Linux containing instructions on basic system operations. I did this so that other people could visit it when they are trying to do something for the first time and don't know how. E.g: Setting up bluetooth, vpn, different kernels, etc ...",
+        skills: "Linux Systems",
         page: "/projects/arch-wiki",
     },
     {
+        name: "File organiser",
+        image: {
+            src: "/assets/projects/file-organiser/old-preview.png",
+            height: 705,
+            width: 705,
+            scale: 0.7,
+        },
+        date: "February 2022",
+        description: "An application to be used with file dumps to sort files based on extension and metadata.",
+        skills: "Avalonia, C#",
+        page: "/projects/file-organiser",
+    },
+    {
         name: "Banking Application",
-        image: "",
-        date: "March 2022",
-        description: "My Non Exam Assessment coursework for Computer Science (A-level). Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).", skills: "C#, Angular, MSSQL, Active Directory",
+        date: "February 2022",
+        description:
+            "My Non Exam Assessment coursework for Computer Science (A-level), aptly name Super Stonks. Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).",
+        skills: "C#, Angular, MSSQL, Active Directory",
         page: "/projects/banking-application",
+    },
+    {
+        name: "Meeting Booking",
+        image: {
+            src: "/assets/projects/meeting-booking/login.png",
+            height: 427,
+            width: 640,
+            scale: 0.7,
+        },
+        date: "March 2021",
+        description: "My first time building an application. Went overkill on an assignment and tried making a GUI for it.",
+        skills: "JavaFx",
+        page: "/projects/file-organiser",
     },
 ];
 
@@ -47,29 +80,43 @@ const keywords = "";
             PROJECTS.map((project, _) => {
                 return (
                     <div class="p-3 my-5 space-y-2 project-card">
-                        <div class="flex flex-col">
-                            <img src={project.image} />
-                            <div class="flex flex-col text-center space-y-1">
-                                <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
-                                    <a href={project.page}>{project.name}</a>
-                                </h1>
-                                <p class="text-gray-400 font-bold">
-                                    {project.date}
+                        <div class="flex flex-col text-center space-y-1">
+                            <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
+                                <a href={project.page}>{project.name}</a>
+                            </h1>
+                            <p class="text-gray-400 font-bold">
+                                {project.date}
+                            </p>
+                            {project.image && (
+                                <img
+                                    class="rounded mx-auto"
+                                    src={project.image.src}
+                                    height={
+                                        project.image.height *
+                                        project.image.scale
+                                    }
+                                    width={
+                                        project.image.width *
+                                        project.image.scale
+                                    }
+                                />
+                            )}
+                            {project.link != undefined && (
+                                <p>
+                                    <a
+                                        class="font-normal underline text-white"
+                                        href={project.link}
+                                        target="_blank"
+                                    >
+                                        {project.link}
+                                    </a>
                                 </p>
-                                {
-                                    project.link != undefined && (
-                                        <p>
-                                            Demo link: 
-                                            <a href={project.link} target="_blank">
-                                                {project.link}
-                                            </a>
-                                        </p>
-                                    )
-                                }
-                            </div>
+                            )}
                         </div>
                         <div>
-                            <p class="text-center py-2 mx-auto sm:w-3/4 lg:w-1/2">{project.description}</p>
+                            <p class="text-center py-2 mx-auto sm:w-3/4 lg:w-1/2">
+                                {project.description}
+                            </p>
                             <h3 class="text-center text-gray-400">
                                 {project.skills}
                             </h3>
