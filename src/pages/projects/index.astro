@@ -4,15 +4,22 @@ import Layout from "../../layouts/Layout.astro";
 export const prerender = true;
 
 const PROJECTS = [
+    // {
+    //     name: "rgit",
+    //     image: "",
+    //     date: "March 2022",
+    //     description: "",
+    //     skills: "",
+    //     page: "/projects/rgit",
+    // },
     {
-        name: "Banking Application",
-        link: "https://hegdeatri.com/projects/banking-application",
+        name: "Rust Projects",
         image: "",
         date: "March 2022",
-        description: "My Non Exam Assessment coursework for Computer Science (A-level). Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).", skills: "C#, Angular, MSSQL, Active Directory",
-        page: "/projects/banking-application",
-    },
-    {
+        description: "",
+        skills: "",
+        page: "/projects/rust-projects",
+    },{
         name: "Arch-Wiki",
         link: "https://arch-wiki.hegdeatri.com",
         image: "",
@@ -22,22 +29,11 @@ const PROJECTS = [
         page: "/projects/arch-wiki",
     },
     {
-        name: "rgit",
-        link: "https://hegdeatri.com/projects/rgit",
+        name: "Banking Application",
         image: "",
         date: "March 2022",
-        description: "",
-        skills: "",
-        page: "/projects/rgit",
-    },
-    {
-        name: "Rust Projects",
-        link: "https://github.com/hegde-atri/rust_projects",
-        image: "",
-        date: "March 2022",
-        description: "",
-        skills: "",
-        page: "/projects/rust",
+        description: "My Non Exam Assessment coursework for Computer Science (A-level). Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).", skills: "C#, Angular, MSSQL, Active Directory",
+        page: "/projects/banking-application",
     },
 ];
 
@@ -55,15 +51,25 @@ const keywords = "";
                             <img src={project.image} />
                             <div class="flex flex-col text-center space-y-1">
                                 <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
-                                    <a href={project.link}>{project.name}</a>
+                                    <a href={project.page}>{project.name}</a>
                                 </h1>
                                 <p class="text-gray-400 font-bold">
                                     {project.date}
                                 </p>
+                                {
+                                    project.link != undefined && (
+                                        <p>
+                                            Demo link: 
+                                            <a href={project.link} target="_blank">
+                                                {project.link}
+                                            </a>
+                                        </p>
+                                    )
+                                }
                             </div>
                         </div>
                         <div>
-                            <p class="text-center">{project.description}</p>
+                            <p class="text-center py-2 mx-auto sm:w-3/4 lg:w-1/2">{project.description}</p>
                             <h3 class="text-center text-gray-400">
                                 {project.skills}
                             </h3>

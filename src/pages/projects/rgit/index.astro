@@ -3,11 +3,16 @@ import Layout from "../../../layouts/Layout.astro";
 
 export const prerender = true;
 
-const description =
-  "A blazingly fast web frontend for git repositories written in Rust";
-const keywords = "";
+const title = "rgit"
+const description = "Blazingly fast web frontend for git repositories written in Rust."
+const keywords = ""
 ---
-
-<Layout title="rgit" description={description} keywords={keywords}>
-  <h1>rgit project page</h1>
+<Layout title={title} description={description} keywords={keywords}>
+    <div class="prose dark:prose-invert">
+      <h1>Woah !</h1>
+      <p>You have found one of my on-going projects!</p>
+      <br>
+      <p>This page is not ready yet, and will be listed under the projects page once it is!</p>
+    </div>
 </Layout>
+

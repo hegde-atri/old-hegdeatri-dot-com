@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "Banking Application";
+const description = "";
+const keywords = "";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+    <div class="prose dark:prose-invert mx-auto my-10">
+        <Content />
+    </div>
+</Layout>
