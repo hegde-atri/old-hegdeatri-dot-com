@@ -10,6 +10,9 @@ folder.
 This application organizes files in a folder based on specified
 options.
 
+I have considered re-writing this appication in rust. I will do so
+sometime in the future (TBA).
+
 ## Preview
 
 ![File organiser GUI preview](/assets/projects/file-organiser/old-preview.png)
