@@ -28,15 +28,13 @@ $$ \pi = \frac{4 \times cd}{td}$$
 
 Therefore we can calculate pi with some random numbers. Here is my rust code for that:
 ```rust
-use rand::Rng;
-
-fn main(){
-    run(1_000_000);
+fn main() {
+    run(10_000_000);    
 }
 
-fn run(iterations: i32) {
-    let mut num_circle = 0;
-    let mut num_total = 0;
+fn run(iterations: i64) {
+    let mut num_circle = 0.0;
+    let mut num_total = 0.0;
     let mut rng = rand::thread_rng();
     let now = Instant::now();
     for _ in 0..iterations {
@@ -44,16 +42,17 @@ fn run(iterations: i32) {
         let y: f64 = rng.gen_range(0.0..1.0);
         let distance: f64 = (x * x) + (y * y);
         if distance <= 1.0 {
-            num_circle += 1;
+            num_circle += 1.0;
         }
-        num_total += 1;
+        num_total += 1.0;
     }
     let pi = 4.0 * (num_circle / num_total);
+    let elapsed_time = now.elapsed();
     println!("Calculated value of pi is: {}", pi);
 }
+
 ```
-We can change the number of iterations to change how close our approximation is to the
-real value of pi.
+We can change the number of iterations to change our accuracy.
 
 ## Searching algorithms
 
