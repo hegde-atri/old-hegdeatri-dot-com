@@ -11,6 +11,10 @@ body {
   transition: 300ms;
 }
 
+.MathJax {
+  font-size: 1.3rem;
+}
+
 code {
   border-radius: 0.3rem;
   padding: 0.2rem;
@@ -35,6 +39,7 @@ code::after {
   background: #0f111a;
   color: #dfebff;
 }
+
 
 /* Styling toc */
 .toc {
