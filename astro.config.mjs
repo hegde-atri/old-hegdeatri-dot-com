@@ -5,6 +5,8 @@ import rehypeToc from 'rehype-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import astroRemark from '@astrojs/markdown-remark';
+import remarkMath from 'remark-math';
+import rehypeMathjax from 'rehype-mathjax';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -15,7 +17,8 @@ export default defineConfig({
   site: 'https://hegdeatri.com',
   markdown: {
     astroRemark,
-    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeToc],
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeMathjax, rehypeSlug, rehypeAutolinkHeadings, rehypeToc],
     // syntaxHighlight: 'prism',
     shikiConfig: {
       theme: 'material-palenight'

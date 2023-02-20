@@ -1,7 +1,8 @@
 # Rust Projects
 
 You can check the projects on my
-[GitHub](https://github.com/hegde-atri/rust_projects)
+[GitHub](https://github.com/hegde-atri/rust_projects). 
+This has just started, expect more to be here soon!
 
 The projects in this repo are:
 
@@ -15,7 +16,8 @@ The projects in this repo are:
 
 ## minigrep
 
-A simple program like grep written alongside from the rust book.
+A simple program like grep written alongside from the rust book. This project helped
+me learn how to create CLI programs, the file structure expected and error handling.
 
 ## chat
 
