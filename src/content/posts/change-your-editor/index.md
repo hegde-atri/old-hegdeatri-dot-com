@@ -1,7 +1,7 @@
 ---
 title: Change your editor
 pubDate: 2023-02-13
-date: 2023-02-13
+date: 2023-02-22
 slug: change-your-editor
 description: Stop using vscode and switch to other Open Source alternatives!
 tags:
@@ -61,7 +61,7 @@ To make a "Clean configuration", we will be structuring the the directory as fol
 │   └── plugin
 ├── lua
 │   └── core
-├── init.lua
+├── init.lua <---------- Referred to as top init.lua
 ```
 
 Now let's make these directories
@@ -70,18 +70,21 @@ Now let's make these directories
 
 This will contain all the plugin specific lua files. For example
 I might have a `./after/plugin/prettier.lua` file with my prettier plugin settings.
-All files in this directory will be loaded at runtime.
+All files in this directory will be loaded at runtime. 
+
+It will be empty for now but you will populate it as you install plugins.
 
 - `./lua/core`
 
-In this lua module we will have our core settings, such as initializing packer and
+In this lua module we will have our core settings, such as initializing packer (our plugin manager of choice) and
 making sure our plugins are installed. We will also set our keymaps and other vim
 settings here.
 
 ## Core settings
 
-If you already have a `.vimrc` then you can transfer it to `./lua/core/base.lua`. Here
-is an example line of what I would put here:
+Let's make a file `./lua/core/base.lua` to have all of our neovim settings.
+These will include things life font family, font size etc. Here is an example
+enabling relative line numbers.
 
 **./lua/core/base.lua**
 
@@ -89,7 +92,8 @@ is an example line of what I would put here:
 vim.opt.relativenumber = true
 ```
 
-I keep all my remaps in a file:
+This is optional, but if you have remaps (remapping actions to custom keybinds) then
+let's make `./lua/core/remaps.lua` file and put all of that in here.
 
 **./lua/core/remaps.lua**
 
@@ -97,31 +101,10 @@ I keep all my remaps in a file:
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>bs", vim.cmd.write)
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
-vim.keymap.set("x", "<leader>p", "\"_dP")
-
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+y")
-
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
-
-vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
-end)
 ```
 
-To make all our files here accessible with just one import, let's create a file `./lua/core/init.lua`.
+To make all our files here accessible with just one import, let's create a file `./lua/
+core/init.lua`.
 
 **./lua/core/init.lua**
 
@@ -155,6 +138,7 @@ its [GitHub page](https://github.com/VonHeikemen/lsp-zero.nvim)
 **./lua/core/packer.lua**
 
 ```lua
+...
 use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -176,7 +160,10 @@ use {
             { 'rafamadriz/friendly-snippets' },
         }
     }
+...
 ```
+
+Remember to run `:Packer
 
 ## Configuring lsp-zero
 
@@ -192,42 +179,10 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'sumneko_lua',
   'rust_analyzer',
-  'dockerls',
   'gopls',
-  'jdtls',
   'pyright',
-  'astro',
-  'solargraph',
-  'texlab',
-  'prismals',
-  'tailwindcss',
 })
-
-local cmp = require('cmp')
-local cmp_select = {behaviour = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ['<C-Space>'] = cmp.mapping.complete,
-})
-
-lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.lsp.buf.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-end)
-
 lsp.setup()
 
 ```
