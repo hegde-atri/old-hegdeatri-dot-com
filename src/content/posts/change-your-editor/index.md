@@ -48,6 +48,8 @@ You see more information on their [website](https://neovim.io) and their [GitHub
 Throughout the following "guide" which walks you through how to make a simple neovim
 config like mine, you can visit the [GitHub repository for it](https://github.com/hegde-atri/.nvim).
 
+> Update: In the quickstart guide below, I am using `packer.nvim`, but the recent trend has been to use `lazy.nvim`
+
 ## Getting Started
 
 Your neovim configuration rests in the `~/.config/nvim` directory. Lets create a file
@@ -70,7 +72,7 @@ Now let's make these directories
 
 This will contain all the plugin specific lua files. For example
 I might have a `./after/plugin/prettier.lua` file with my prettier plugin settings.
-All files in this directory will be loaded at runtime. 
+All files in this directory will be loaded at runtime.
 
 It will be empty for now but you will populate it as you install plugins.
 
@@ -163,7 +165,7 @@ use {
 ...
 ```
 
-Remember to run `:Packer
+Remember to run `:PackerSync` and `:PackerInstall` after adding new plugins.
 
 ## Configuring lsp-zero
 
@@ -199,3 +201,5 @@ right now, it is **not** because it actually takes a long time to migrate. Since
 Emacs](https://github.com/doomemacs/doomemacs) does a lot of things behind the scenes for the features I use. It would take some
 time for me to implement the current exising features with the correct options enabled.
 If I were using my own config for Emacs 28.2, it would be a lot quicker (like 2 minutes).
+
+You can read my [Vanilla Emacs](emacs-config) and [Doom Emacs configuration](doom-emacs-config) posts.

@@ -28,7 +28,13 @@ const keywords = frontmatter.keywords;
 const comments = frontmatter.comments ?? true;
 ---
 
-<PostLayout title={title} description={description} comments={comments} image={image} keywords={keywords}>
+<PostLayout
+  title={title}
+  description={description}
+  comments={comments}
+  image={image}
+  keywords={keywords}
+>
   <div
     class="bg-foreground-300 dark:bg-background-light rounded-md px-3 py-0.5 text-background dark:text-background-200"
   >
@@ -58,14 +64,23 @@ const comments = frontmatter.comments ?? true;
       </p>
     </div>
     <div class="flex flex-wrap mb-2">
-      {frontmatter.tags.map((tag: String)=> {
-        return (
-          <p class="mx-1 my-2 bg-foreground-500 cursor-pointer dark:bg-background-lighter 
-          hover:bg-foreground-700 hover:dark:bg-background-800 px-2 rounded-md transition duration-300">
-            <a href={`/tags/${tag}`} class="no-underline text-white dark:text-foreground-50">{tag[0].toUpperCase() + tag.slice(1)}</a>
+      {
+        frontmatter.tags.map((tag: String) => {
+          return (
+            <p
+              class="mx-1 my-2 bg-foreground-500 cursor-pointer dark:bg-background-lighter
+          hover:bg-foreground-700 hover:dark:bg-background-800 px-2 rounded-md transition duration-300"
+            >
+              <a
+                href={`/tags/${tag}`}
+                class="no-underline text-white dark:text-foreground-50"
+              >
+                {tag[0].toUpperCase() + tag.slice(1)}
+              </a>
             </p>
-        )
-      })}
+          );
+        })
+      }
     </div>
   </div>
   <Content />
