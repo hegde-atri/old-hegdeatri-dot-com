@@ -46,7 +46,7 @@ It surprisingly hasn't failed me a single time so far, and is quick and snappy �
 
 I am now on a road to convert as many programs as I can to those written in Rust/C or something that is **blazingly fast** Here is the list of alternatives that I use, that are either written in Rust or is compatible with nushell.
 
-If you have any alternatives that I haven't heard about,
+If you have any alternatives that I haven't heard about, let me know in the comments!
 
 - zoxide: (written in rust🦀) Inspired by `z` and `autojump`.
 - fnm: (written in rust🦀) Fast and Simple node manager, my replacement of choice for `NVM`.
