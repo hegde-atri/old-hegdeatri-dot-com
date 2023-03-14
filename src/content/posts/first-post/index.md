@@ -66,6 +66,15 @@ like a clean slate was what I needed. This was mostly since I became more knowle
 I am passionate about, my opinions and view have changed quite a bit from earlier. I do plan on re-writing a
 few articles for the new website.
 
+## Performance
+
+I am using Vercel to host my website, with a CI pipeline setup with my GitHub repository. It roughly takes 20-30s to deploy
+demostrating just how performant astro is. Also props to Vercel for making it quick!
+
+I get a perfect score on every category in pagespeed!
+
+![PageSpeed score screenshot showing 100/100 in every category](/assets/posts/first-post/pagespeed.png)
+
 ## Conclusion
 
 1 month later, and here we are! I think the website looks beautiful, although I wouldn't recommend turning
