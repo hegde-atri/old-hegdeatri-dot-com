@@ -1,7 +1,5 @@
 FROM node:16
 
-LABEL MAINTAINER Atri Hegde <iamatrihegde@outlook.com>
-
 RUN node -v
 
 RUN npm -v
@@ -14,5 +12,6 @@ COPY package*.json ./
 COPY . .
 
 RUN yarn install
+RUN yarn cache clean
 
 RUN yarn dev --host
