@@ -12,12 +12,12 @@ The new version of my [old website](https://old.hegdeatri.com).
 
 - [x] Initial UI sketch
 - [x] Header/Navbar
-  - [X] Mobile friendly navbar
+  - [x] Mobile friendly navbar
 - [x] Landing Page
 - [x] About Page
 - [x] Posts page, and Post List
 - [x] Add comment sections to posts
-- [-] Projects page, and Projects List
+- [x] Projects page, and Projects List
 - [x] Add code snippets page
 - [x] Themes
 - [x] Create tags/categories page
