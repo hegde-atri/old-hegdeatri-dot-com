@@ -11,6 +11,7 @@ The new version of my [old website](https://old.hegdeatri.com).
 ## To-do
 
 - [x] Initial UI sketch
+- [ ] Remove white theme.
 - [x] Header/Navbar
   - [x] Mobile friendly navbar
 - [x] Landing Page
