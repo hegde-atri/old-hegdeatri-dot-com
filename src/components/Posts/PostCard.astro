@@ -12,13 +12,13 @@ function formatDate(date: Date) {
     <div class="flex flex-col">
         <h3 class="text-2xl font-bold hover-effect p-2 mb-1">
             <a
-                class="text-background dark:text-foreground-200"
+                class="text-foreground-200"
                 href={`/posts/${post.frontmatter.slug}`}
                 >{post.frontmatter.title}</a
             >
         </h3>
         <blockquote
-            class="invisible -z-50 absolute sm:relative sm:z-auto sm:visible flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-700 dark:text-grey-400"
+            class="invisible -z-50 absolute sm:relative sm:z-auto sm:visible flex flex-row justify-between border-l-4 border-l-foreground-500 pl-2 text-grey-400"
         >
             {
                 post.frontmatter.pubDate === post.frontmatter.date ? (
@@ -65,7 +65,7 @@ function formatDate(date: Date) {
             </p>
         </blockquote>
     </div>
-    <p class="text-background dark:text-grey-200 m-1 p-1">
+    <p class="text-grey-200 m-1 p-1">
         {
             post.frontmatter.description ||
                 "A post about " + post.frontmatter.title
@@ -107,7 +107,7 @@ function formatDate(date: Date) {
         box-shadow: 0px 0px 5px #19bdc1;
     }
 
-    :global(.dark) a::before {
+    a::before {
         background: #34d9dc;
         box-shadow: 0px 0px 5px #adf4f3;
     }
@@ -116,5 +116,4 @@ function formatDate(date: Date) {
         transform-origin: left;
         transform: scaleX(1);
     }
-    
 </style>

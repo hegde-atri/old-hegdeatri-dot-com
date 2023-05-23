@@ -6,22 +6,27 @@ export const prerender = true;
 
 // TODO paginate
 export async function getStaticPaths() {
-  const PAGE_SIZE = 8;
-  let allPosts = await Astro.glob("../../content/posts/**/*.md*");
-  const posts = allPosts.filter((post) => !post.frontmatter.draft);
-  const allTags = new Set();
-  posts.map((post) => {
-    post.frontmatter.tags && post.frontmatter.tags.map((tag: String) => allTags.add(tag.toLowerCase()));
-  });
-  return Array.from(allTags).map((tag) => {
-    const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag));
-    return {
-      params: { tag },
-      props: {
-        page: filteredPosts,
-      },
-    };
-  });
+    const PAGE_SIZE = 8;
+    let allPosts = await Astro.glob("../../content/posts/**/*.md*");
+    const posts = allPosts.filter((post) => !post.frontmatter.draft);
+    const allTags = new Set();
+    posts.map((post) => {
+        post.frontmatter.tags &&
+            post.frontmatter.tags.map((tag: String) =>
+                allTags.add(tag.toLowerCase())
+            );
+    });
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = posts.filter((post) =>
+            post.frontmatter.tags.includes(tag)
+        );
+        return {
+            params: { tag },
+            props: {
+                page: filteredPosts,
+            },
+        };
+    });
 }
 
 const { page } = Astro.props;
@@ -31,28 +36,30 @@ let description = `All posts with tag: ${tag}`;
 ---
 
 <Layout title={title} description={description}>
-  <div class="w-11/12 md:w-3/4 mx-auto">
-    <h1 class="text-3xl font-bold text-background-800 dark:text-blue-50">
-      Posts with tag <span class="text-background-600 dark:text-blue-200 italic">{tag}</span>
-    </h1>
-    <h2 class="mx-auto text-xl font-bold mt-3">
-      <a href="/tags" class="underline hover:text-foreground-600 hover:dark:text-foreground-300 transition duration-300"
-        >All tags</a
-      >
-    </h2>
-  </div>
-  <PostList posts={page} />
+    <div class="w-11/12 md:w-3/4 mx-auto">
+        <h1 class="text-3xl font-bold text-blue-50">
+            Posts with tag <span class="text-blue-200 italic">{tag}</span>
+        </h1>
+        <h2 class="mx-auto text-xl font-bold mt-3">
+            <a
+                href="/tags"
+                class="underline hover:text-foreground-300 transition duration-300"
+                >All tags</a
+            >
+        </h2>
+    </div>
+    <PostList posts={page} />
 </Layout>
 
 <style>
-  h1:after {
-    content: "";
-    display: block;
-    align-content: center;
-    background: #ff3d7a;
-    width: 200px;
-    height: 4px;
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px #e984a4;
-  }
+    h1:after {
+        content: "";
+        display: block;
+        align-content: center;
+        background: #ff3d7a;
+        width: 200px;
+        height: 4px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px #e984a4;
+    }
 </style>

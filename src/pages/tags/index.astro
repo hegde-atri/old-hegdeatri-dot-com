@@ -10,66 +10,68 @@ let allPosts = await Astro.glob("../../content/posts/**/*.md*");
 const posts = allPosts.filter((post) => !post.frontmatter.draft);
 
 const tags = [
-  ...new Set(
-    [].concat.apply(
-      [],
-      posts.map((post) => post.frontmatter.tags)
-    )
-  ),
+    ...new Set(
+        [].concat.apply(
+            [],
+            posts.map((post) => post.frontmatter.tags)
+        )
+    ),
 ];
 ---
 
 <Layout title={title} description={description}>
-  <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50">All tags</h1>
-  <div class="w-11/12 md:w-3/4 mx-auto mt-10 flex flex-wrap">
-    {
-      tags.map((tag) => (
-        <p class="p-1 mx-3 rounded-sm text-xl">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+    <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-blue-50">
+        All tags
+    </h1>
+    <div class="w-11/12 md:w-3/4 mx-auto mt-10 flex flex-wrap">
+        {
+            tags.map((tag) => (
+                <p class="p-1 mx-3 rounded-sm text-xl">
+                    <a href={`/tags/${tag}`}>{tag}</a>
+                </p>
+            ))
+        }
+    </div>
 </Layout>
 
 <style>
-  h1:after {
-    content: "";
-    display: block;
-    align-content: center;
-    background: #ff3d7a;
-    width: 110px;
-    height: 4px;
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px #e984a4;
-  }
-  a {
-    position: relative;
-    text-decoration: none;
-    box-shadow: 0 0 1px transparent;
-  }
+    h1:after {
+        content: "";
+        display: block;
+        align-content: center;
+        background: #ff3d7a;
+        width: 110px;
+        height: 4px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px #e984a4;
+    }
+    a {
+        position: relative;
+        text-decoration: none;
+        box-shadow: 0 0 1px transparent;
+    }
 
-  a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-    background: #445285;
-    box-shadow: 0px 0px 5px #19bdc1;
-  }
-  :global(.dark) a::before {
-    background: #34d9dc;
-    box-shadow: 0px 0px 5px #adf4f3;
-  }
+    a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        background: #445285;
+        box-shadow: 0px 0px 5px #19bdc1;
+    }
+    :global(.dark) a::before {
+        background: #34d9dc;
+        box-shadow: 0px 0px 5px #adf4f3;
+    }
 
-  a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
+    a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
 </style>

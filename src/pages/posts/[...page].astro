@@ -6,35 +6,42 @@ import Layout from "../../layouts/Layout.astro";
 export const prerender = true;
 
 export async function getStaticPaths({ paginate }) {
-  const PAGE_SIZE = 8;
+    const PAGE_SIZE = 8;
 
-  let allPosts = await Astro.glob("../../content/posts/**/*.md*");
-  const posts = allPosts.filter((post) => !post.frontmatter.draft);
-  let allSortedPosts = posts.sort(
-    (a, b) => new Date(a.frontmatter.date).valueOf() - new Date(b.frontmatter.date).valueOf()
-  ).reverse();
+    let allPosts = await Astro.glob("../../content/posts/**/*.md*");
+    const posts = allPosts.filter((post) => !post.frontmatter.draft);
+    let allSortedPosts = posts
+        .sort(
+            (a, b) =>
+                new Date(a.frontmatter.date).valueOf() -
+                new Date(b.frontmatter.date).valueOf()
+        )
+        .reverse();
 
-  return paginate(allSortedPosts, {
-    pageSize: PAGE_SIZE,
-  });
+    return paginate(allSortedPosts, {
+        pageSize: PAGE_SIZE,
+    });
 }
 
 const { page } = Astro.props;
 ---
+
 <Layout title="Posts">
-  <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-background-800 dark:text-blue-50">Posts</h1>
-  <PostList posts={page.data} />
-  <Pagination page={page} />
+    <h1 class="w-11/12 md:w-3/4 mx-auto text-3xl font-bold text-blue-50">
+        Posts
+    </h1>
+    <PostList posts={page.data} />
+    <Pagination page={page} />
 </Layout>
 <style>
-  h1:after { 
-  content:"";
-  display: block;
-  align-content: center;
-  background: #ff3d7a; 
-  width:80px; 
-  height:4px; 
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px #e984a4;
-}
+    h1:after {
+        content: "";
+        display: block;
+        align-content: center;
+        background: #ff3d7a;
+        width: 80px;
+        height: 4px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px #e984a4;
+    }
 </style>
