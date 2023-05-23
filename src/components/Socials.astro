@@ -2,26 +2,54 @@
 import { Icon } from "astro-icon";
 
 const Links = [
-  { icon: "tabler:brand-linkedin", link: "https://linkedin.com/in/hegde-atri", label: "Linkedin" },
-  { icon: "tabler:brand-github", link: "https://github.com/hegde-atri", label: "GitHub" },
-  { icon: "tabler:brand-gitlab", link: "https://gitlab.comhegde-atri", label: "GitLab" },
-  { icon: "ph:youtube-logo-light", link: "https://www.youtube.com/channel/UCHZwj1GpsDQ3B9S5VjeY36A", label: "YouTube" },
-  { icon: "mdi:stackoverflow", link: "https://stackoverflow.com/users/15020804/atri-hegde", label: "Stack Overflow" },
-  { icon: "tabler:mail", link: "mailto:iamatrihegde@outlook.com", label: "Email" },
-  { icon: "mdi:rss", link: "https://hegdeatri.com/rss.xml", label: "Rss feed" },
+    {
+        icon: "tabler:brand-linkedin",
+        link: "https://linkedin.com/in/hegde-atri",
+        label: "Linkedin",
+    },
+    {
+        icon: "tabler:brand-github",
+        link: "https://github.com/hegde-atri",
+        label: "GitHub",
+    },
+    {
+        icon: "tabler:brand-gitlab",
+        link: "https://gitlab.comhegde-atri",
+        label: "GitLab",
+    },
+    {
+        icon: "ph:youtube-logo-light",
+        link: "https://www.youtube.com/channel/UCHZwj1GpsDQ3B9S5VjeY36A",
+        label: "YouTube",
+    },
+    {
+        icon: "mdi:stackoverflow",
+        link: "https://stackoverflow.com/users/15020804/atri-hegde",
+        label: "Stack Overflow",
+    },
+    {
+        icon: "tabler:mail",
+        link: "mailto:iamatrihegde@outlook.com",
+        label: "Email",
+    },
+    {
+        icon: "mdi:rss",
+        link: "https://hegdeatri.com/rss.xml",
+        label: "Rss feed",
+    },
 ];
 
 const styles = Astro.props;
 ---
 
 <div class={styles.class}>
-  {
-    Links.map((item) => {
-      return (
-        <a href={item.link} aria-label={item.label}>
-          <Icon name={item.icon} height="35"/>
-        </a>
-      );
-    })
-  }
+    {
+        Links.map((item) => {
+            return (
+                <a href={item.link} aria-label={item.label} target="_blank">
+                    <Icon name={item.icon} height="35" />
+                </a>
+            );
+        })
+    }
 </div>
