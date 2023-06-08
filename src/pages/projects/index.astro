@@ -13,6 +13,20 @@ const PROJECTS = [
     //     page: "/projects/rgit",
     // },
     {
+        name: "Alex Vaccaro's Portfolio",
+        image: {
+            src: "/assets/projects/alex-vaccaro.png",
+            height: 1080,
+            width: 1920,
+            scale: 0.5,
+        },
+        link: "https://alex.hegdeatri.com",
+        date: "June 2023",
+        description: "Graphics Portfolio for Alex Vaccaro.",
+        skills: "Astro, SEO, Framer motion, tailwindcss",
+        page: "https://alex.hegdeatri.com",
+    },
+    {
         name: "AGM Agency.",
         image: {
             src: "/assets/projects/agm.png",
@@ -24,7 +38,7 @@ const PROJECTS = [
         date: "May 2023",
         description: "Full website for AGM Agency Ltd.",
         skills: "Astro, SEO, Framer motion, tailwindcss",
-        page: "/projects",
+        page: "https://agmagency.org",
     },
     {
         name: "Motorgrowth",
@@ -34,11 +48,11 @@ const PROJECTS = [
             width: 1920,
             scale: 0.5,
         },
-        link: "https://motorgrowth.com",
+        link: "https://motorgrowth.hegdeatri.com",
         date: "March 2023",
         description: "Landing page for MotorGrowth",
         skills: "Astro, SEO, Framer motion, tailwindcss",
-        page: "/projects",
+        page: "https://motorgrowth.hegdeatri.com",
     },
     {
         name: "repo",
@@ -51,14 +65,16 @@ const PROJECTS = [
     {
         name: "Rust Projects",
         date: "November 2022 - Ongoing",
-        description: "A collection of projects written using rust. It is very diverse ranging from a API server connected SurrealDb to a single-channel/multiple-receiver chat application. Read more about in the it's page.",
+        description:
+            "A collection of projects written using rust. It is very diverse ranging from a API server connected SurrealDb to a single-channel/multiple-receiver chat application. Read more about in the it's page.",
         skills: "Rust, Problem Solving, Actix, SurrealDb",
         page: "/projects/rust-projects",
     },
     {
         name: "Rust Practice",
         date: "June 2022 - Ongoing",
-        description: "A collection of solutions to unique problems I've come across. Apart from that, also contains all my leetcode and edabit submissions in Rust.",
+        description:
+            "A collection of solutions to unique problems I've come across. Apart from that, also contains all my leetcode and edabit submissions in Rust.",
         skills: "Rust, Problem Solving, Leetcode, Edabit",
         page: "/projects/rust-practice",
     },
@@ -86,7 +102,8 @@ const PROJECTS = [
             scale: 0.7,
         },
         date: "February 2022",
-        description: "An application to be used with file dumps to sort files based on extension and metadata.",
+        description:
+            "An application to be used with file dumps to sort files based on extension and metadata.",
         skills: "Avalonia, C#",
         page: "/projects/file-organiser",
     },
@@ -107,7 +124,8 @@ const PROJECTS = [
             scale: 0.7,
         },
         date: "March 2021",
-        description: "My first time building an application. Went overkill on an assignment and tried making a GUI for it.",
+        description:
+            "My first time building an application. Went overkill on an assignment and tried making a GUI for it.",
         skills: "JavaFx",
         page: "/projects/meeting-booking",
     },
@@ -125,24 +143,32 @@ const keywords = "";
                     <div class="p-3 my-5 space-y-2 project-card">
                         <div class="flex flex-col text-center space-y-1">
                             <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
-                                <a href={project.page}>{project.name}</a>
+                                <a href={project.page} target="_blank">
+                                    {project.name}
+                                </a>
                             </h1>
                             <p class="text-gray-400 font-bold">
                                 {project.date}
                             </p>
                             {project.image && (
-                                <img
-                                    class="rounded mx-auto"
-                                    src={project.image.src}
-                                    height={
-                                        project.image.height *
-                                        project.image.scale
-                                    }
-                                    width={
-                                        project.image.width *
-                                        project.image.scale
-                                    }
-                                />
+                                <a
+                                    href={project.page}
+                                    class="p-5"
+                                    target="_blank"
+                                >
+                                    <img
+                                        class="rounded-md mx-auto hover:scale-105 transition duration-300"
+                                        src={project.image.src}
+                                        height={
+                                            project.image.height *
+                                            project.image.scale
+                                        }
+                                        width={
+                                            project.image.width *
+                                            project.image.scale
+                                        }
+                                    />
+                                </a>
                             )}
                             {project.link != undefined && (
                                 <p>

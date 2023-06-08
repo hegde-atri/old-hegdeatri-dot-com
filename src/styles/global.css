@@ -79,11 +79,8 @@ code::after {
   color: #b1cbff;
 }
 .toc-link:hover {
-  color: #0f111a;
-  text-decoration: none;
-}
-.dark .toc-link:hover {
   color: #d3faf9;
+  text-decoration: none;
 }
 
 [astro-icon] {
