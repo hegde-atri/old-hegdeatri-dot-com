@@ -41,6 +41,14 @@ Just create this config file with the following content.
 
 _(This was taken from the official [pipewire documentation](https://docs.pipewire.org/page_module_echo_cancel.html))_
 
+You will now need to restart pipewire.
+
+```sh
+systemctl --user restart pipewire
+```
+
+Now restart any application that is using your mic, and you should see a new "Echo-Cancel Source" :)
+
 ## Finishing touches
 
 To make sure that your mic is loud enough, make sure to use `alsamixer` (available from `alsa-utils` package) and change the Internal Mic Boost to match your preferance.
