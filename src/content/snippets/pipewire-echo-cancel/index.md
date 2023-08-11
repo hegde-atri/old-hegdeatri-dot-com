@@ -7,8 +7,6 @@ description: In-built echo cancelling for your pipewire sources.
 tags:
   - linux
   - pipewire
-draft: false
-comments: true
 ---
 
 We will be adding a new source which will output the echo-cancelled audio.
@@ -42,3 +40,7 @@ Just create this config file with the following content.
 ```
 
 _(This was taken from the official [pipewire documentation](https://docs.pipewire.org/page_module_echo_cancel.html))_
+
+## Finishing touches
+
+To make sure that your mic is loud enough, make sure to use `alsamixer` (available from `alsa-utils` package) and change the Internal Mic Boost to match your preferance.
