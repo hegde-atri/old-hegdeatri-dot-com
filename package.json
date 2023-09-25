@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "typescript": "^5.2.2",
     "yaml": "^2.2.2"
   }
 }
