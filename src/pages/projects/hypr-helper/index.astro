@@ -1,0 +1,17 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "hypr-helper";
+const description =
+  "A CLI tool to get hyprland information and also return eww widget";
+const keywords = "Linux, Hyprland, CLI, EWW";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="prose prose-invert mx-auto my-10">
+    <Content />
+  </div>
+</Layout>
