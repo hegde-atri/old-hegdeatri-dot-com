@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "rust-os";
+const description = "A simple operating system written in Rust.";
+const keywords = "rust, os, operating system";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="prose prose-invert mx-auto my-10">
+    <Content />
+  </div>
+</Layout>
