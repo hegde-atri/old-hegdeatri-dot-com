@@ -4,131 +4,147 @@ import Layout from "../../layouts/Layout.astro";
 export const prerender = true;
 
 const PROJECTS = [
-    // {
-    //     name: "rgit",
-    //     image: "",
-    //     date: "March 2022",
-    //     description: "",
-    //     skills: "",
-    //     page: "/projects/rgit",
-    // },
-    {
-        name: "Alex Vaccaro's Portfolio",
-        image: {
-            src: "/assets/projects/alex-vaccaro.png",
-            height: 1080,
-            width: 1920,
-            scale: 0.5,
-        },
-        link: "https://alex.hegdeatri.com",
-        date: "June 2023",
-        description: "Graphics Portfolio for Alex Vaccaro.",
-        skills: "Astro, SEO, Framer motion, tailwindcss",
-        page: "https://alex.hegdeatri.com",
+  {
+    name: "dashpage",
+    image: "",
+    date: "October 2023",
+    description: "A dashboard for the minimalists",
+    skills: "SvelteKit, Supabase, OAuth, TailwindCSS",
+    page: "/projects/dashpage",
+  },
+  /* {
+    name: "rust-os",
+    image: "",
+    date: "October 2023",
+    description: "A simple operating system written in rust",
+    skills: "Rust, OS",
+    page: "/projects/rust-os",
+  }, */
+  {
+    name: "hypr-helper",
+    image: "",
+    date: "August 2023",
+    description: "A CLI tool to help with hyprland management",
+    skills: "Rust, CLI",
+    page: "/projects/hypr-helper",
+  },
+  {
+    name: "Alex Vaccaro's Portfolio",
+    image: {
+      src: "/assets/projects/alex-vaccaro.png",
+      height: 1080,
+      width: 1920,
+      scale: 0.5,
     },
-    {
-        name: "AGM Agency.",
-        image: {
-            src: "/assets/projects/agm.png",
-            height: 1080,
-            width: 1920,
-            scale: 0.5,
-        },
-        link: "https://agmagency.org",
-        date: "May 2023",
-        description: "Full website for AGM Agency Ltd.",
-        skills: "Astro, SEO, Framer motion, tailwindcss",
-        page: "https://agmagency.org",
+    link: "https://alex.hegdeatri.com",
+    date: "June 2023",
+    description: "Graphics Portfolio for Alex Vaccaro.",
+    skills: "Astro, SEO, Framer motion, tailwindcss",
+    page: "https://alex.hegdeatri.com",
+  },
+  {
+    name: "AGM Agency.",
+    image: {
+      src: "/assets/projects/agm.png",
+      height: 1080,
+      width: 1920,
+      scale: 0.5,
     },
-    {
-        name: "Motorgrowth",
-        image: {
-            src: "/assets/projects/motorgrowth.png",
-            height: 1080,
-            width: 1920,
-            scale: 0.5,
-        },
-        link: "https://motorgrowth.hegdeatri.com",
-        date: "March 2023",
-        description: "Landing page for MotorGrowth",
-        skills: "Astro, SEO, Framer motion, tailwindcss",
-        page: "https://motorgrowth.hegdeatri.com",
+    link: "https://agmagency.org",
+    date: "May 2023",
+    description: "Full website for AGM Agency Ltd.",
+    skills: "Astro, SEO, Framer motion, tailwindcss",
+    page: "https://agmagency.org",
+  },
+  {
+    name: "Motorgrowth",
+    image: {
+      src: "/assets/projects/motorgrowth.png",
+      height: 1080,
+      width: 1920,
+      scale: 0.5,
     },
-    {
-        name: "repo",
-        image: "",
-        date: "March 2023 - Ongoing",
-        description: "A CLI tool to manage your repositories",
-        skills: "Rust, CLI, Cross platform",
-        page: "/projects/repo",
+    link: "https://motorgrowth.com",
+    date: "March 2023",
+    description: "Landing page for MotorGrowth",
+    skills: "Astro, SEO, Framer motion, tailwindcss",
+    page: "https://hegdeatri.com",
+  },
+  {
+    name: "repo",
+    image: "",
+    date: "March 2023 - Ongoing",
+    description: "A CLI tool to manage your repositories",
+    skills: "Rust, CLI, Cross platform",
+    page: "/projects/repo",
+  },
+  {
+    name: "Rust Projects",
+    date: "November 2022 - Ongoing",
+    description:
+      "A collection of projects written using rust. It is very diverse ranging from a API server connected SurrealDb to a single-channel/multiple-receiver chat application. Read more about in the it's page.",
+    skills: "Rust, Problem Solving, Actix, SurrealDb",
+    page: "/projects/rust-projects",
+  },
+  {
+    name: "Rust Practice",
+    date: "June 2022 - Ongoing",
+    description:
+      "A collection of solutions to unique problems I've come across. Apart from that, also contains all my leetcode and edabit submissions in Rust.",
+    skills: "Rust, Problem Solving, Leetcode, Edabit",
+    page: "/projects/rust-practice",
+  },
+  {
+    name: "Arch-Wiki",
+    link: "https://arch-wiki.hegdeatri.com",
+    image: {
+      src: "/assets/projects/arch-wiki.png",
+      height: 1080,
+      width: 1920,
+      scale: 0.5,
     },
-    {
-        name: "Rust Projects",
-        date: "November 2022 - Ongoing",
-        description:
-            "A collection of projects written using rust. It is very diverse ranging from a API server connected SurrealDb to a single-channel/multiple-receiver chat application. Read more about in the it's page.",
-        skills: "Rust, Problem Solving, Actix, SurrealDb",
-        page: "/projects/rust-projects",
+    date: "March 2022 - Ongoing",
+    description:
+      "A wiki for Arch Linux containing instructions on basic system operations. I did this so that other people could visit it when they are trying to do something for the first time and don't know how. E.g: Setting up bluetooth, vpn, different kernels, etc ...",
+    skills: "Linux Systems",
+    page: "/projects/arch-wiki",
+  },
+  {
+    name: "File organiser",
+    image: {
+      src: "/assets/projects/file-organiser/old-preview.png",
+      height: 705,
+      width: 705,
+      scale: 0.7,
     },
-    {
-        name: "Rust Practice",
-        date: "June 2022 - Ongoing",
-        description:
-            "A collection of solutions to unique problems I've come across. Apart from that, also contains all my leetcode and edabit submissions in Rust.",
-        skills: "Rust, Problem Solving, Leetcode, Edabit",
-        page: "/projects/rust-practice",
+    date: "February 2022",
+    description:
+      "An application to be used with file dumps to sort files based on extension and metadata.",
+    skills: "Avalonia, C#",
+    page: "/projects/file-organiser",
+  },
+  {
+    name: "Banking Application",
+    date: "February 2022",
+    description:
+      "My Non Exam Assessment coursework for Computer Science (A-level), aptly name Super Stonks. Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).",
+    skills: "C#, Angular, MSSQL, Active Directory",
+    page: "/projects/banking-application",
+  },
+  {
+    name: "Meeting Booking",
+    image: {
+      src: "/assets/projects/meeting-booking/login.png",
+      height: 427,
+      width: 640,
+      scale: 0.7,
     },
-    {
-        name: "Arch-Wiki",
-        link: "https://arch-wiki.hegdeatri.com",
-        image: {
-            src: "/assets/projects/arch-wiki.png",
-            height: 1080,
-            width: 1920,
-            scale: 0.5,
-        },
-        date: "March 2022 - Ongoing",
-        description:
-            "A wiki for Arch Linux containing instructions on basic system operations. I did this so that other people could visit it when they are trying to do something for the first time and don't know how. E.g: Setting up bluetooth, vpn, different kernels, etc ...",
-        skills: "Linux Systems",
-        page: "/projects/arch-wiki",
-    },
-    {
-        name: "File organiser",
-        image: {
-            src: "/assets/projects/file-organiser/old-preview.png",
-            height: 705,
-            width: 705,
-            scale: 0.7,
-        },
-        date: "February 2022",
-        description:
-            "An application to be used with file dumps to sort files based on extension and metadata.",
-        skills: "Avalonia, C#",
-        page: "/projects/file-organiser",
-    },
-    {
-        name: "Banking Application",
-        date: "February 2022",
-        description:
-            "My Non Exam Assessment coursework for Computer Science (A-level), aptly name Super Stonks. Although the project itself does not have a highly appealing UI, it is completely usuable and very minimal and stylish. The frontend was made using Angular 12 with Angular material. For the backend, I was using the .NET stack of EF Core, ASP.NET and Microsoft SQL. Identity Management was done using Microsoft AAD (B2C).",
-        skills: "C#, Angular, MSSQL, Active Directory",
-        page: "/projects/banking-application",
-    },
-    {
-        name: "Meeting Booking",
-        image: {
-            src: "/assets/projects/meeting-booking/login.png",
-            height: 427,
-            width: 640,
-            scale: 0.7,
-        },
-        date: "March 2021",
-        description:
-            "My first time building an application. Went overkill on an assignment and tried making a GUI for it.",
-        skills: "JavaFx",
-        page: "/projects/meeting-booking",
-    },
+    date: "March 2021",
+    description:
+      "My first time building an application. Went overkill on an assignment and tried making a GUI for it.",
+    skills: "JavaFx",
+    page: "/projects/meeting-booking",
+  },
 ];
 
 const description = "Atri Hegde's notable projects";
@@ -136,114 +152,100 @@ const keywords = "";
 ---
 
 <Layout title="Projects" description={description} keywords={keywords}>
-    <div>
-        {
-            PROJECTS.map((project, _) => {
-                return (
-                    <div class="p-3 my-5 space-y-2 project-card">
-                        <div class="flex flex-col text-center space-y-1">
-                            <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
-                                <a href={project.page} target="_blank">
-                                    {project.name}
-                                </a>
-                            </h1>
-                            <p class="text-gray-400 font-bold">
-                                {project.date}
-                            </p>
-                            {project.image && (
-                                <a
-                                    href={project.page}
-                                    class="p-5"
-                                    target="_blank"
-                                >
-                                    <img
-                                        class="rounded-md mx-auto hover:scale-105 transition duration-300"
-                                        src={project.image.src}
-                                        height={
-                                            project.image.height *
-                                            project.image.scale
-                                        }
-                                        width={
-                                            project.image.width *
-                                            project.image.scale
-                                        }
-                                    />
-                                </a>
-                            )}
-                            {project.link != undefined && (
-                                <p>
-                                    <a
-                                        class="font-normal underline text-white"
-                                        href={project.link}
-                                        target="_blank"
-                                    >
-                                        {project.link}
-                                    </a>
-                                </p>
-                            )}
-                        </div>
-                        <div>
-                            <p class="text-center py-2 mx-auto sm:w-3/4 lg:w-1/2">
-                                {project.description}
-                            </p>
-                            <h3 class="text-center text-gray-400">
-                                {project.skills}
-                            </h3>
-                        </div>
-                    </div>
-                );
-            })
-        }
-    </div>
+  <div>
+    {
+      PROJECTS.map((project, _) => {
+        return (
+          <div class="p-3 my-5 space-y-2 project-card">
+            <div class="flex flex-col text-center space-y-1">
+              <h1 class="project-title text-3xl p-3 font-semibold transition-all duration-300 hover:text-4xl">
+                <a href={project.page} target="_blank">
+                  {project.name}
+                </a>
+              </h1>
+              <p class="text-gray-400 font-bold">{project.date}</p>
+              {project.image && (
+                <a href={project.page} class="p-5" target="_blank">
+                  <img
+                    class="rounded-md mx-auto hover:scale-105 transition duration-300"
+                    src={project.image.src}
+                    height={project.image.height * project.image.scale}
+                    width={project.image.width * project.image.scale}
+                  />
+                </a>
+              )}
+              {project.link != undefined && (
+                <p>
+                  <a
+                    class="font-normal underline text-white"
+                    href={project.link}
+                    target="_blank"
+                  >
+                    {project.link}
+                  </a>
+                </p>
+              )}
+            </div>
+            <div>
+              <p class="text-center py-2 mx-auto sm:w-3/4 lg:w-1/2">
+                {project.description}
+              </p>
+              <h3 class="text-center text-gray-400">{project.skills}</h3>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </Layout>
 <style>
-    @keyframes lights {
-        0% {
-            color: hsl(230, 40%, 80%);
-            text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.2),
-                0 0 0.125em hsla(320, 100%, 60%, 0.3),
-                -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-                1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
-        }
-
-        30% {
-            color: hsl(230, 80%, 90%);
-            text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
-                0 0 0.125em hsla(320, 100%, 60%, 0.5),
-                -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-                0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
-        }
-
-        40% {
-            color: hsl(230, 100%, 95%);
-            text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
-                0 0 0.125em hsla(320, 100%, 90%, 0.5),
-                -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
-                0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
-        }
-
-        70% {
-            color: hsl(230, 80%, 90%);
-            text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
-                0 0 0.125em hsla(320, 100%, 60%, 0.5),
-                0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-                -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
-        }
-
-        100% {
-            color: hsl(230, 40%, 80%);
-            text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.2),
-                0 0 0.125em hsla(320, 100%, 60%, 0.3),
-                1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-                -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
-        }
+  @keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
     }
 
-    .project-title {
-        animation: lights 5s 750ms linear infinite;
+    30% {
+      color: hsl(230, 80%, 90%);
+      text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
 
-    /* a {
+    40% {
+      color: hsl(230, 100%, 95%);
+      text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow: 0 0 2em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+  }
+
+  .project-title {
+    animation: lights 5s 750ms linear infinite;
+  }
+
+  /* a {
         position: relative;
         text-decoration: none;
         box-shadow: 0 0 1px transparent;
@@ -274,14 +276,14 @@ const keywords = "";
         transform: scaleX(1);
     } */
 
-    .project-card {
-        transition: 500ms;
-        border-radius: 8px;
-        opacity: 0.85;
-        transition: opacity 0.3s ease-out;
-    }
+  .project-card {
+    transition: 500ms;
+    border-radius: 8px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease-out;
+  }
 
-    .project-card:hover {
-        opacity: 1;
-    }
+  .project-card:hover {
+    opacity: 1;
+  }
 </style>

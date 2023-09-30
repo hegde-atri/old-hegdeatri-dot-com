@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "Arch wiki";
+const description = "A wiki for beginners to Arch Linux";
+const keywords = "Linux, Guide";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="prose prose-invert mx-auto my-10">
+    <Content />
+  </div>
+</Layout>
