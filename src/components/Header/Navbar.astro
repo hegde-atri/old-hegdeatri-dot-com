@@ -1,39 +1,37 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
 let Links = [
-    { name: "Posts", link: "/posts" },
-    { name: "Projects", link: "/projects" },
-    { name: "Snippets", link: "/snippets" },
-    { name: "About", link: "/about" },
+  { name: "Posts", link: "/posts" },
+  { name: "Projects", link: "/projects" },
+  { name: "Snippets", link: "/snippets" },
+  { name: "About", link: "/about" },
 ];
 ---
 
 <nav
-    class="flex flex-col sm:flex-row sm:items-center justify-between bg-background-light p-3 rounded-b-lg mx-auto sm:w-10/12 md:w-8/12"
+  class="flex flex-col sm:flex-row sm:items-center justify-between bg-background-light p-3 rounded-b-lg mx-auto sm:w-10/12 md:w-8/12"
 >
-    <a class="flex mx-auto sm:m-0 items-center" href="/">
-        <img src="/images/logo.webp" height="50" width="50" alt="logo" />
-        <h1 class="pl-3 text-indigo-100 font-bold font-sans brand">
-            Atri Hegde
-        </h1>
-    </a>
-    <div
-        class="flex space-x-5 mx-auto sm:m-0 items-center flex-wrap overscroll-x-contain sm:flex-row sm:ml-auto sm:space-x-3"
-    >
-        {
-            Links.map((item, _) => {
-                return (
-                    <a
-                        class="text-foreground-100 hover:text-white hover:bg-background-lighter px-2 text-center py-2 rounded transition duration-200"
-                        href={item.link}
-                    >
-                        {item.name}
-                    </a>
-                );
-            })
-        }
-    </div>
-    <!-- <span class=""><ThemeIcon /></span> -->
+  <a class="flex mx-auto sm:m-0 items-center" href="/">
+    <img src="/images/logo.webp" height="50" width="50" alt="logo" />
+    <!-- <h1 class="pl-3 text-indigo-100 font-bold font-sans brand">Atri Hegde</h1> -->
+  </a>
+  <div
+    class="flex space-x-5 mx-auto sm:m-0 items-center flex-wrap overscroll-x-contain sm:flex-row sm:ml-auto sm:space-x-3"
+  >
+    {
+      Links.map((item, _) => {
+        return (
+          <a
+            class="text-foreground-100 hover:text-white hover:bg-background-lighter px-2 text-center py-2 rounded transition duration-200"
+            href={item.link}
+          >
+            {item.name}
+          </a>
+        );
+      })
+    }
+  </div>
+  <!-- <span class=""><ThemeIcon /></span> -->
 </nav>
 
 <style></style>
