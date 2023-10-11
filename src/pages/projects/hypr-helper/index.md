@@ -9,6 +9,26 @@ This is second official rust project.
 - Maintaining the application so it doesn't break.
 - Writing documentation and publising to docs.rs
 
+# Version 1
+
+- It will return data when requested through the CLI using the command.
+
+## Features
+
+- Workspace information
+- Active window title
+- EWW - returns eww widget with workspace data.
+
+
+# Version 2
+
+This is built as a module for status bar that I plan to write. Therefore it is written to be very modular.
+
+- Listens to UNIX socket for changes rather than polling data.
+
+## Features
+
+- 
 
 ## Versions
 

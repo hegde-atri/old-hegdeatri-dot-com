@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "web-server";
+const description = "A simple web server with thread pooling.";
+const keywords = "rust, web-server, thread-pooling";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="prose prose-invert mx-auto my-10">
+    <Content />
+  </div>
+</Layout>
