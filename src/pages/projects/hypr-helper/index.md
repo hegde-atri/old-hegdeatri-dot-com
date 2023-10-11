@@ -1,6 +1,6 @@
 # hypr-helper 
 
-This is second official rust project.
+This is my second official rust project.
 
 ## Things learnt
 
@@ -25,10 +25,13 @@ This is second official rust project.
 This is built as a module for status bar that I plan to write. Therefore it is written to be very modular.
 
 - Listens to UNIX socket for changes rather than polling data.
+- Serialises and deserialises data.
 
 ## Features
 
-- 
+- Workspace
+- Windowname
+- EWW
 
 ## Versions
 
