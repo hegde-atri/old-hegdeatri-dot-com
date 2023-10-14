@@ -7,33 +7,34 @@ This is my second official rust project.
 - How to build a CLI Tool.
 - Writing tests
 - Maintaining the application so it doesn't break.
-- Writing documentation and publising to docs.rs
-
-# Version 1
-
-- It will return data when requested through the CLI using the command.
+- Writing documentation and publishing to docs.rs
 
 ## Features
 
 - Workspace information
 - Active window title
-- EWW - returns eww widget with workspace data.
+- EWW - returns EWW widget with workspace data.
 
+# Version 1
+
+- It will return data when requested through the CLI using the command.
+
+I polled for data. I felt like this was rather resource intensive.
 
 # Version 2
 
-This is built as a module for status bar that I plan to write. Therefore it is written to be very modular.
-
 - Listens to UNIX socket for changes rather than polling data.
-- Serialises and deserialises data.
+- Serialises and de-serialises data.
 
-## Features
+# Vision
 
-- Workspace
-- Windowname
-- EWW
+I want to create my own status bar that will be more efficient than EWW, which I am currently using. So this is my start of creating more and more modules that I can later use in the status bar project.
 
-## Versions
+# Testing
+
+I wrote some unit tests in 0.0.5+. You will obviously need Hyprland installed and running for them to pass.
+
+# Versions
 
 There is two versions, the first one was called `hyprland-workspaces`.
 
