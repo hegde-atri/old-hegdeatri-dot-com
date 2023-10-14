@@ -8,4 +8,4 @@ This helped build my fundamental skills on Rust.
 
 ## What I learnt
 
-**This section is begin worked on.**
+**This section is being worked on.**
