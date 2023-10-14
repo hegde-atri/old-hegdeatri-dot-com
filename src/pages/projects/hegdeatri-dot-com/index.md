@@ -13,7 +13,7 @@ Now that I had decided to make my own site, there were so many to choose from. I
 to choose Angular despite having the most experience in it, because it felt too clunky. I wanted my site
 to be blazingly fast as possible. So I explored SSG's such as Hugo, Gatsby and Next.js. I tried Next.js
 as I intended to use it for my freelance projects as well. The result of this was
-[nextjs-hegdeatri-dot-com](https://nextjs-hegdeatri.com). Although I learnt a lot, since it was my
+[nextjs-hegdeatri-dot-com](https://next.hegdeatri.com). Although I learnt a lot, since it was my
 first time using Nextjs and Tailwindcss, I was not happy. I had rushed it, there was not enough planning.
 
 ### In comes Astro
