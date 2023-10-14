@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Content as Content } from "./index.md";
+
+export const prerender = true;
+
+const title = "hegdeatri-dot-com";
+const description = "My website";
+const keywords = "web-dev, website, portfolio, astro";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="prose prose-invert mx-auto my-10">
+    <Content />
+  </div>
+</Layout>
