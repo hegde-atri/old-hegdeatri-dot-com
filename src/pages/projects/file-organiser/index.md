@@ -1,7 +1,7 @@
 # File Organiser
 
 You can check out the project on my
-[GitHub](https://github.com/hegde-atri/file-organiser).
+[GitHub](https://github.com/hegde-atri/file-organiser/tree/old)
 
 A C# application written using the Avalonia framework. It was made
 when I had recovered over 2TB of data from a hard drive all into one
