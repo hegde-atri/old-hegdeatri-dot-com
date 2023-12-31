@@ -23,11 +23,11 @@ export default defineConfig({
     // syntaxHighlight: 'prism',
     shikiConfig: {
       theme: syntaxTheme,
-      // wrap: true,
+      wrap: true,
     }
   },
 
   integrations: [mdx(), sitemap(), tailwind()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
 });
