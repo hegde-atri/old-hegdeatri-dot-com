@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 let { title, description, url, image, keywords } = Astro.props;
 const tags: String = "Atri Hegde, Atri hedge, hegdeatri, hedgeatri, hegdeatri-dot-com, Personal site, Portfolio, Resume, rust, linux";
 
@@ -37,5 +39,6 @@ const subtitle = "Atri Hegde";
   <meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
 
   <!-- page title -->
-  <title>{title} - {subtitle}</title>
+ <ViewTransitions />
+ <title>{title} - {subtitle}</title>
 </head>

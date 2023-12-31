@@ -8,6 +8,7 @@ import astroRemark from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import tailwind from "@astrojs/tailwind";
+import syntaxTheme from "./syntax-theme.json";
 
 // https://astro.build/config
 import vercel from "@astrojs/vercel/serverless";
@@ -21,7 +22,7 @@ export default defineConfig({
     rehypePlugins: [rehypeMathjax, rehypeSlug, rehypeAutolinkHeadings, rehypeToc],
     // syntaxHighlight: 'prism',
     shikiConfig: {
-      theme: 'material-palenight'
+      theme: syntaxTheme,
       // wrap: true,
     }
   },
